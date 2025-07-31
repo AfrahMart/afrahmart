@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AFRAH Mart</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: DM Sans, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+  header {
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('header-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  height: 50px;
+}
+
+    header img {
+      height: 80px;
+    }
+    header h1 {
+      font-size: 28px;
+      color: white;
+      margin-left: 15px;
+    }
+    nav {
+      background-color: #331756;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: white;
+      padding: 14px 20px;
+      display: block;
+      text-decoration: none;
+    }
+    nav a:hover {
+      background-color: #750851;
+    }
+   .cover {
+  position: relative;
+  height: 200px;
+  background: url('cover1.jpg') center/cover no-repeat;
+  animation: changeBg 15s infinite alternate;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.cover img {
+  width: 500px;
+  height: auto;
+  filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.6));
+}
+
+    @keyframes changeBg {
+      0% { background-image: url('cover1.jpg'); }
+      33% { background-image: url('cover2.jpg'); }
+      66% { background-image: url('cover3.jpg'); }
+    }
+    .cover h1 {
+      font-size: 48px;
+      font-weight: bold;
+    }
+    .cover p {
+      font-size: 20px;
+      margin-top: 10px;
+    }
+    .section {
+      padding: 50px 20px;
+    }
+    .about {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 50px;
+      align-items: center;
+    }
+    .about img {
+      max-width: 500px;
+      border-radius: 8px;
+    }
+    .about-text {
+      max-width: 700px;
+    }
+    .about-text h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.product {
+  background: white;
+  padding: 15px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.product:hover {
+  transform: translateY(-5px);
+}
+
+.product img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.product h3 {
+  margin-top: 10px;
+}
+
+.product h3 a {
+  text-decoration: none;
+  color: #333;
+}
+
+
+.founders-section-wrapper {
+  padding: 60px 20px;
+  background-image: url('founders-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+	
+   .founders-section-wrapper {
+  padding: 60px 20px;
+  background-image: url('founders-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+.founders-heading {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 40px;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+}
+
+.founders-section {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.founder-card {
+  width: 280px;
+  background: rgba(0,0,0,0.5); /* semi-transparent dark background */
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.founder-card:hover {
+  transform: translateY(-5px);
+}
+
+.founder-card img {
+  width: 150px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5%;
+  margin-bottom: 5px;
+  border: 3px solid white;
+}
+
+.founder-card h3 {
+  margin: 10px 0 5px;
+}
+
+.designation {
+  font-weight: bold;
+  color: #ddd;
+}
+
+.description {
+  font-size: 14px;
+  color: #eee;
+  margin-top: 10px;
+}
+
+
+   .contact {
+  background-image: url('contact-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  padding: 20px 20px;
+  text-align: center;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.3); /* Image er upor halko black overlay */
+}
+
+  </style>
+</head>
+<body>
+
+  <header>
+   
+	      </header>
+
+  <nav>
+    <a href="#cover">Home</a>
+    <a href="#about">About</a>
+    <a href="#products">Products</a>
+    <a href="#founder">Team</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section class="cover" id="cover">
+    <div class="cover">
+  <img src="logo.png" alt="Your Logo">
+</div>
+  </section>
+
+  <section id="about" style="padding: 60px 20px; background-color: #f8f8f8;">
+  <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+    <h2 style="font-size: 32px; margin-bottom: 20px; color: #333;">About Afrah Mart</h2>
+    <p style="font-size: 18px; line-height: 1.8; color: #555;">
+      Welcome to <strong>Afrah Mart</strong> — your neighborhood destination for elegant fabrics and everyday essentials.
+      Founded with love and purpose, we bring <strong>quality, comfort, and style</strong> straight to your hands at a fair price.
+    </p>
+    <p style="font-size: 18px; line-height: 1.8; margin-top: 20px; color: #555;">
+      At Afrah Mart, we believe shopping should feel personal. That’s why every product — from soft bed sheets to stylish fabrics —
+      is carefully selected to meet your needs and tastes.
+    </p>
+    <p style="font-size: 18px; line-height: 1.8; margin-top: 20px; color: #555;">
+      We are more than just a store — <strong>we are a part of your everyday life.</strong>
+    </p>
+  </div>
+</section>
+
+<section class="section" id="products" style="padding: 40px; font-family: 'Segoe UI', sans-serif; background-color: #fdfdfd;">
+  <h2 style="text-align:center; font-size: 28px; margin-bottom: 30px;">Our Products</h2>
+
+  <div class="products-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+
+    <!-- Goj Kapor -->
+    <div class="product" style="background: #fff; padding: 20px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); display: flex; flex-direction: column;">
+      <img src="goj-kapor.png" alt="Goj Kapor" style="width: 100%; height: 200px; object-fit: cover; border-radius: 6px;">
+      <h3 style="margin-top: 15px; font-size: 20px;">Goj Kapor</h3>
+      <p style="font-size: 15px; color: #444; line-height: 1.6;">
+        ✂️ Fabric Types: Voile, Poplin, Becky, Linen Print <br>
+        🎨 Colors: 12+ colors available<br>
+        📏 Variants: 6+ fabric variants<br>
+        💵 Price: ৳75 – ৳90 per yard
+      </p>
+      <a href="product.html?product=goj-kapor" style="margin-top: auto; display: inline-block; padding: 10px 15px; background-color: #2d8f64; color: #fff; border-radius: 6px; text-align: center; text-decoration: none;">Order Now</a>
+    </div>
+
+    <!-- Bed Sheet -->
+    <div class="product">
+      <img src="bedsheet.png" alt="Bedsheet">
+      <h3>Bedsheet</h3>
+      <p style="font-size: 15px; color: #444; line-height: 1.6;">
+        🛏️ Types: Premium, Standard <br>
+        🧵 Fabrics: Cotton, Mixed Cotton<br>
+        🛌 Size: King & Queen<br>
+        🎁 Includes: With/Without Pillow Cover & Kolbalish<br>
+        💵 Price: ৳650 – ৳1200
+      </p>
+      <a href="product.html?product=bedsheet" class="btn">Order Now</a>
+    </div>
+
+    <!-- 3pcs Fabric -->
+    <div class="product">
+      <img src="3pcs.png" alt="3pcs Fabric">
+      <h3>3pcs Fabric</h3>
+      <p style="font-size: 15px; color: #444; line-height: 1.6;">
+        👗 Items: Kameez, Salwar, Dupatta<br>
+        🎨 Colors: 10+ seasonal shades<br>
+        🧶 Fabrics: Voile, Georgette, Cotton<br>
+        💵 Price: ৳850 – ৳1400 per set
+      </p>
+      <a href="product.html?product=3pcs" class="btn">Order Now</a>
+    </div>
+
+    <!-- Pillow -->
+    <div class="product">
+      <img src="pillow.png" alt="Pillow">
+      <h3>Pillow</h3>
+      <p style="font-size: 15px; color: #444; line-height: 1.6;">
+        🛏️ Ready-Made Pillows <br>
+        📦 Includes: Pillow + Cover<br>
+        🎨 Multiple designs available<br>
+        💵 Price: ৳350 – ৳600 per piece
+      </p>
+      <a href="product.html?product=pillow" class="btn">Order Now</a>
+    </div>
+
+    <!-- Mosquito Net -->
+    <div class="product">
+      <img src="mosquito-net.png" alt="Mosquito Net">
+      <h3>Mosquito Net</h3>
+      <p style="font-size: 15px; color: #444; line-height: 1.6;">
+        🦟 Sizes: Single, Double, King<br>
+        🧵 Fabrics: Nylon, Cotton Net<br>
+        🎨 Colors: Pink, Blue, White, Gray<br>
+        💵 Price: ৳650 – ৳1000
+      </p>
+      <a href="product.html?product=mosquito-net" class="btn">Order Now</a>
+    </div>
+
+    <!-- Kushon -->
+    <div class="product">
+      <img src="kushan.png" alt="Kushan">
+      <h3>Kushon</h3>
+      <p style="font-size: 15px; color: #444; line-height: 1.6;">
+        🪑 Use: Sofa, Chair, Bedroom<br>
+        🎨 Colors: Red, Gray, Navy, Maroon<br>
+        🧵 Material: Soft Velvet / Jute Mixed<br>
+        💵 Price: ৳300 – ৳450 per piece
+      </p>
+      <a href="product.html?product=kushan" class="btn">Order Now</a>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .product {
+    background: white;
+    padding: 20px;
+    text-align: left;
+    border: 1px solid #ddd;
+    border-radius: 1px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+  }
+
+  .product:hover {
+    transform: translateY(-5px);
+  }
+
+  .product img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+
+  .product h3 {
+    margin-top: 12px;
+    font-size: 20px;
+  }
+
+  .product p {
+    margin-top: 8px;
+    margin-bottom: 15px;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #2d8f64;
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.2s;
+  }
+
+  .btn:hover {
+    background-color: #256b4f;
+  }
+</style>
+
+
+
+  <section class="founders-section-wrapper">
+  <h2 class="founders-heading">Meet Our Founders</h2> 
+  <div class="founders-section">
+    <div class="founder-card">
+      <img src="founder.png" alt="Founder Image">
+      <h3>Mohammad Nirob Hossain</h3>
+      <p class="designation">Founder & Strategy Lead</p>
+      <p class="description">Visionary behind Afrah Mart with a mission to bring premium fabric to your neighborhood.</p>
+    </div>
+    <div class="founder-card">
+      <img src="cofounder.png" alt="Co-Founder Image">
+      <h3>Mashuma Akter Mim</h3>
+      <p class="designation">Co-Founder</p>
+      <p class="description">Creative mind and support system behind Afrah Mart’s stylish product line.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 3-column contact section with background image -->
+<section id="contact" style="padding: 1px; background: url('contact-bg.jpg') no-repeat center center / cover; border-radius: 10px; color: #fff; font-family: sans-serif;">
+
+  <div style="background-color: rgba(0, 0, 0, 0.6); padding: 30px; border-radius: 10px;">
+    <h2 style="font-size: 26px; margin-bottom: 30px;">📞 Contact Us</h2>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: space-between;">
+
+      <!-- Outlet Info -->
+      <div style="flex: 1; min-width: 250px;">
+        <h4 style="margin-bottom: 10px;">🏪 Visit Our Outlet</h4>
+        <p style="margin: 0;">📍 Town Hall Market, Mohammadpur,<br>Dhaka-1207, Bangladesh</p>
+        <p style="margin-top: 10px;">⏰ Open: 10:00 AM – 11:30 PM<br>❌ <strong>Outlet closed on Thursdays</strong></p>
+      </div>
+
+      <!-- Corporate Contact -->
+      <!-- Corporate Contact -->
+<div style="flex: 1; min-width: 250px;">
+  <h4 style="margin-bottom: 10px;">🤝 Corporate Deal <span style="font-weight: normal;">(Founder Direct Line)</span></h4>
+  <p style="margin: 0;">
+    📞 <strong>+880 1716 619413</strong><br>
+    ✉️ <strong>afrahmart@gmail.com</strong><br>
+    <span style="font-size: 90%; color: #666;">(For Business Inquiries)</span>
+  </p>
+</div>
+
+
+      <!-- Social Media -->
+      <div style="flex: 1; min-width: 250px;">
+        <h4 style="margin-bottom: 10px;">🔗 Social & Support</h4>
+        <p style="margin: 0;">💬 Message us on<br>🌐 <a href="https://facebook.com/afrahmart24" target="_blank" style="color: #fff; text-decoration: underline;">Facebook Page</a></p>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+
+
+
+
+</body>
+</html>
