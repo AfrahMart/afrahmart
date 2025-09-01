@@ -32,6 +32,10 @@
   nav a:hover { background:#331756; }
   @media (max-width: 768px) {
   nav a { padding: 10px 12px; font-size: 14px; }
+  section {
+  scroll-margin-top: 80px; /* nav height অনুযায়ী */
+}
+
 }
 
 
@@ -103,6 +107,7 @@
 <nav>
   <a href="#gifts">Gifts & Packaging</a>
   <a href="#household">Household</a>
+  <a href="#events">Event Service</a>
   <a href="#about">About</a>
   <a href="#founders-section-wrapper">Founder</a> <!-- ekhane update -->
   <a href="#contact">Contact</a>
@@ -123,13 +128,24 @@
   </div>
 </section>
 
-<!-- About Section -->
-<section id="about" class="section">
-  <h2>About Afrah Mart</h2>
-  <p style="text-align:center; max-width:800px; margin:auto; font-size:18px; line-height:1.8;">
-    Welcome to <strong>Afrah Mart</strong> — your local destination for elegant fabrics, stylish household essentials, and thoughtfully curated gifts. Founded with care and purpose, we bring quality, comfort, and style directly to you at fair prices.<br><br>
-    At <strong>Afrah Mart</strong>, shopping is personal. Every product — from soft bed sheets to chic fabrics and curated gift items — is carefully selected to meet your tastes and everyday needs.<br><br>
-    We’re more than a store; we’re a part of your daily life, helping you create moments of comfort, style, and joy.
+<!-- About Afrah Mart -->
+<section id="about" class="section" style="background:#fff; padding:60px 20px;">
+  <h2 style="text-align:center; font-size:28px; margin-bottom:25px;">About Afrah Mart</h2>
+  
+  <p style="max-width:800px; margin:auto; font-size:16px; line-height:1.7; color:#444; text-align:center;">
+    Welcome to <strong>Afrah Mart</strong> — your trusted partner for elegant fabrics, stylish household essentials, and thoughtfully curated gifts. Every product and service is carefully checked and approved by our Founder & Strategy Lead to ensure quality and excellence.
+  </p>
+  
+  <p style="max-width:800px; margin:20px auto 0; font-size:16px; line-height:1.7; color:#444; text-align:center;">
+    From gift bags, corporate boxes, and premium hampers to household products that blend comfort with design, we bring style and elegance into your everyday and special moments.
+  </p>
+  
+  <p style="max-width:800px; margin:20px auto 0; font-size:16px; line-height:1.7; color:#444; text-align:center;">
+    ✨ <strong>Event Arrangement:</strong> We proudly offer decoration and planning for birthdays, weddings, anniversaries, and corporate events. Whether a small gathering or a grand celebration, every detail is designed with care to make your moments memorable.
+  </p>
+  
+  <p style="max-width:800px; margin:20px auto 0; font-size:16px; line-height:1.7; color:#444; text-align:center;">
+    At <strong>Afrah Mart</strong>, shopping isn’t just about products — it’s about creating experiences filled with joy, comfort, and lasting memories.
   </p>
 </section>
 
@@ -138,6 +154,7 @@
 <section id="gifts" class="section">
   <h2>Elegant Gifts & Packaging</h2>
   <div class="products-grid">
+
     <!-- Gift Bags -->
     <div class="product">
       <img src="gift-bag.jpg" alt="Gift Bag">
@@ -145,32 +162,32 @@
       <p style="font-size: 15px; color: #444; line-height: 1.6;">
         🎨 Material: Paper, Fabric<br>
         📏 Sizes: Small, Medium, Large<br>
-        🎁 Use: Birthdays, Weddings, Festive Gifting<br>
+        🎁 Use: Birthdays, Weddings, Corporate Gifting<br>
         💵 Price: ৳120 – ৳500 per bag
       </p>
     </div>
 
-    <!-- Gift Boxes -->
+    <!-- Corporate Gift Box -->
     <div class="product">
-      <img src="gift-box.jpg" alt="Gift Box">
-      <h3>Gift Boxes</h3>
+      <img src="corporate-gift-box.jpg" alt="Corporate Gift Box">
+      <h3>Corporate Gift Box</h3>
       <p style="font-size: 15px; color: #444; line-height: 1.6;">
-        🎨 Material: Cardboard, Kraft Paper, Premium Paper<br>
-        📏 Sizes: Round, Square, Custom<br>
-        🎁 Use: Jewelry, Chocolates, Special Occasion Gifts<br>
-        💵 Price: ৳100 – ৳1000 per box
+        🎨 Material: Premium Cardboard, Wooden, Acrylic<br>
+        📏 Sizes: Customizable<br>
+        🎁 Use: Corporate Events, Client Appreciation, Premium Gifting<br>
+        💵 Price: ৳1000 – ৳10000 per box
       </p>
     </div>
 
-    <!-- Wrapping & Packaging -->
+    <!-- Custom Gift Hampers -->
     <div class="product">
-      <img src="wrapping.jpg" alt="Wrapping">
-      <h3>Wrapping & Packaging</h3>
+      <img src="gift-hamper.jpg" alt="Gift Hamper">
+      <h3>Custom Gift Hampers</h3>
       <p style="font-size: 15px; color: #444; line-height: 1.6;">
-        🎨 Material: Paper, Foil, Ribbons<br>
-        📏 Sizes: A4 Sheets, Rolls<br>
-        🎁 Use: Gift Wrapping, Party Favors<br>
-        💵 Price: ৳75 – ৳400 per item
+        🎁 Contents: Chocolates, Dry Fruits, Candles, Lifestyle Items<br>
+        📏 Sizes: Small, Medium, Luxury<br>
+        🎨 Customizable Branding Available<br>
+        💵 Price: ৳1500 – ৳10,000 per hamper
       </p>
     </div>
 
@@ -180,61 +197,30 @@
       <h3>Gift Mugs</h3>
       <p style="font-size: 15px; color: #444; line-height: 1.6;">
         🎨 Material: Ceramic, Glass<br>
-        📏 Size: 250ml, 350ml<br>
-        🎁 Use: Personalized Gifts, Corporate Gifts<br>
-        💵 Price: ৳350 – ৳1000 
+        📏 Sizes: 250ml, 350ml<br>
+        🎁 Use: Personalized Gifts, Corporate Giveaways<br>
+        💵 Price: ৳350 – ৳1000 per piece
       </p>
     </div>
 
-    <!-- Gift Cards -->
-    <div class="product">
-      <img src="gift-card.jpg" alt="Gift Card">
-      <h3>Gift Cards</h3>
-      <p style="font-size: 15px; color: #444; line-height: 1.6;">
-        📏 Denominations: ৳500, ৳1000, ৳2000<br>
-        🎁 Use: Flexible Gifts, Any Occasion<br>
-        💵 Price: As per denomination
-      </p>
-    </div>
+  </div>
+</section>
 
-    <!-- Decorative Candle -->
-    <div class="product">
-      <img src="decorative-candle.jpg" alt="Decorative Candle">
-      <h3>Decorative Candle</h3>
-      <p style="font-size: 15px; color: #444; line-height: 1.6;">
-        🎨 Scent: Lavender, Vanilla, Rose<br>
-        📏 Sizes: Small, Medium, Large<br>
-        🎁 Use: Home Decor, Gifting<br>
-        💵 Price: ৳250 – ৳1000
-      </p>
-    </div>
   </div>
 </section>
 
 
-<!-- Household Second -->
+<!-- Household Products Section -->
 <section id="household" class="section" style="background:#f8f8f8;">
   <h2>Household Products</h2>
   
-  <div class="products-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-
-    <!-- Goj Kapor -->
-    <div class="product" style="background: #fff; padding: 20px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); display: flex; flex-direction: column;">
-      <img src="goj-kapor.png" alt="Goj Kapor" style="width: 100%; height: 200px; object-fit: cover; border-radius: 6px;">
-      <h3 style="margin-top: 15px; font-size: 20px;">Goj Kapor</h3>
-      <p style="font-size: 15px; color: #444; line-height: 1.6;">
-        ✂️ Fabric Types: Voile, Poplin, Becky, Linen Print <br>
-        🎨 Colors: 12+ colors available<br>
-        📏 Variants: 6+ fabric variants<br>
-        💵 Price: ৳70 – ৳300 per yard
-      </p>
-    </div>
-
+  <div class="products-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px;">
+     
     <!-- Bedsheet -->
-    <div class="product" style="background: #fff; padding: 20px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); display: flex; flex-direction: column;">
-      <img src="bedsheet.png" alt="Bedsheet" style="width: 100%; height: 200px; object-fit: cover; border-radius: 6px;">
+    <div class="product">
+      <img src="bedsheet.png" alt="Bedsheet">
       <h3>Bedsheet</h3>
-      <p style="font-size: 15px; color: #444; line-height: 1.6;">
+      <p>
         🛏️ Types: Premium, Standard <br>
         🧵 Fabrics: Cotton, Mixed Cotton<br>
         🛌 Size: King & Queen<br>
@@ -243,23 +229,11 @@
       </p>
     </div>
 
-    <!-- 3pcs Fabric -->
-    <div class="product" style="background: #fff; padding: 20px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); display: flex; flex-direction: column;">
-      <img src="3pcs.png" alt="3pcs Fabric" style="width: 100%; height: 200px; object-fit: cover; border-radius: 6px;">
-      <h3>3pcs Fabric</h3>
-      <p style="font-size: 15px; color: #444; line-height: 1.6;">
-        👗 Items: Kameez, Salwar, Dupatta<br>
-        🎨 Colors: 10+ seasonal shades<br>
-        🧶 Fabrics: Voile, Georgette, Cotton<br>
-        💵 Price: ৳850 – ৳5000 per set
-      </p>
-    </div>
-
     <!-- Pillow -->
-    <div class="product" style="background: #fff; padding: 20px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); display: flex; flex-direction: column;">
-      <img src="pillow.png" alt="Pillow" style="width: 100%; height: 200px; object-fit: cover; border-radius: 6px;">
+    <div class="product">
+      <img src="pillow.png" alt="Pillow">
       <h3>Pillow</h3>
-      <p style="font-size: 15px; color: #444; line-height: 1.6;">
+      <p>
         🛏️ Ready-Made Pillows <br>
         📦 Includes: Pillow + Cover<br>
         🎨 Multiple designs available<br>
@@ -267,23 +241,11 @@
       </p>
     </div>
 
-    <!-- Mosquito Net -->
-    <div class="product" style="background: #fff; padding: 20px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); display: flex; flex-direction: column;">
-      <img src="mosquito-net.png" alt="Mosquito Net" style="width: 100%; height: 200px; object-fit: cover; border-radius: 6px;">
-      <h3>Mosquito Net</h3>
-      <p style="font-size: 15px; color: #444; line-height: 1.6;">
-        🦟 Sizes: Single, Double, King<br>
-        🧵 Fabrics: Nylon, Cotton Net<br>
-        🎨 Colors: Pink, Blue, White, Gray<br>
-        💵 Price: ৳600 – ৳1500
-      </p>
-    </div>
-
     <!-- Kushon -->
-    <div class="product" style="background: #fff; padding: 20px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); display: flex; flex-direction: column;">
-      <img src="kushan.png" alt="Kushon" style="width: 100%; height: 200px; object-fit: cover; border-radius: 6px;">
+    <div class="product">
+      <img src="kushan.png" alt="Kushon">
       <h3>Kushon</h3>
-      <p style="font-size: 15px; color: #444; line-height: 1.6;">
+      <p>
         🪑 Use: Sofa, Chair, Bedroom<br>
         🎨 Colors: Red, Gray, Navy, Maroon<br>
         🧵 Material: Soft Velvet / Jute Mixed<br>
@@ -291,8 +253,111 @@
       </p>
     </div>
 
+    <!-- Mosquito Net -->
+    <div class="product">
+      <img src="mosquito-net.png" alt="Mosquito Net">
+      <h3>Mosquito Net</h3>
+      <p>
+        🦟 Sizes: Single, Double, King<br>
+        🧵 Fabrics: Nylon, Cotton Net<br>
+        🎨 Colors: Pink, Blue, White, Gray<br>
+        💵 Price: ৳600 – ৳1500
+      </p>
+    </div>
+
   </div>
 </section>
+
+<style>
+  /* Household Products Images & Cards like Gifts Section */
+  #household .product {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+
+  #household .product:hover {
+    transform: translateY(-5px);
+  }
+
+  #household .product img {
+    width: 100%;
+    height: 250px; /* uniform height like Gifts */
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    background: #fff;
+    padding: 5px;
+  }
+
+  #household .product h3 {
+    margin-top: 10px;
+    font-size: 20px;
+  }
+
+  #household .product p {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.6;
+    margin-top: 8px;
+  }
+
+  @media (max-width: 768px) {
+    #household .products-grid {
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+  }
+</style>
+
+	
+  </div>
+</section>
+<!-- Event Branding, POSM & Kiosk Solutions Section -->
+<section id="events" class="section" style="background:#f9f9f9; padding:60px 20px;">
+  <h2 style="text-align:center; font-size:32px; margin-bottom:30px;">✨ Event Services</h2>
+  <p style="text-align:center; max-width:850px; margin:auto; font-size:18px; line-height:1.8; color:#444;">
+    Afrah Mart brings your events to life with complete solutions—from elegant décor to professional event branding, POSM, and kiosk setups.  
+    We handle every detail for corporate events, cultural programs, weddings, and personal celebrations.
+  </p>
+
+  <div class="services-grid" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:25px; margin-top:40px;">
+
+    <!-- Corporate Events -->
+    <div class="service-card" style="background:#fff; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.08); text-align:center;">
+      <img src="corporate-event.jpg" alt="Corporate Event" style="width:100%; border-radius:10px; margin-bottom:15px;">
+      <h3>🏢 Corporate Events</h3>
+      <p style="font-size:15px; color:#555; line-height:1.6;">
+        Elegant arrangements for conferences, seminars, and brand launches with premium décor, seating, and setup.
+      </p>
+    </div>
+
+    <!-- Event Branding, POSM & Kiosk -->
+    <div class="service-card" style="background:#fff; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.08); text-align:center;">
+      <img src="branding-posm-kiosk.jpg" alt="Event Branding & POSM" style="width:100%; border-radius:10px; margin-bottom:15px;">
+      <h3>🏷️ Branding, POSM & Kiosk</h3>
+      <p style="font-size:15px; color:#555; line-height:1.6;">
+        Create impactful brand experiences with custom event branding, POSM, stall & kiosk setups, banners, signage, and product displays for corporate and cultural events.
+      </p>
+    </div>
+
+    <!-- Weddings & Personal Celebrations -->
+    <div class="service-card" style="background:#fff; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.08); text-align:center;">
+      <img src="wedding.jpg" alt="Wedding & Personal Celebration" style="width:100%; border-radius:10px; margin-bottom:15px;">
+      <h3>💍 Weddings & Personal Celebrations</h3>
+      <p style="font-size:15px; color:#555; line-height:1.6;">
+        From birthdays and anniversaries to grand weddings, we deliver creative décor, stage design, lighting, and personalized arrangements for memorable moments.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+
 <style>
   /* Basic Product Card Button Style (still available if needed elsewhere) */
   .btn { 
@@ -365,7 +430,7 @@
   </a>
 
   <!-- Gmail / Email -->
-  <a href="mailto:afrahmartbd@gmail.com" target="_blank" style="background:##FFFFFF;">
+  <a href="mailto:afrahmartbd@gmail.com" target="_blank" style="background:#FFFFFF;">
     <img src="gmail-icon.png" alt="Email">
   </a>
 </div>
@@ -428,7 +493,7 @@
 
 	
    .founders-section-wrapper {
-  padding: 60px 20px;
+  padding: 40px 20px;
   background-image: url('founders-bg.jpg');
   background-size: cover;
   background-position: center;
@@ -439,7 +504,7 @@
 .founders-heading {
   text-align: center;
   font-size: 32px;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
 }
 
