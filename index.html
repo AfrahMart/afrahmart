@@ -587,12 +587,11 @@
 </section>
 
 <style>
-
-
 .founder-message {
   padding: 60px 20px;
   background: #f9f9f9;
 }
+
 .founder-container {
   display: flex;
   flex-wrap: wrap;
@@ -601,43 +600,91 @@
   margin: auto;
   gap: 40px;
 }
+
 .founder-image-wrapper {
   flex: 1;
+  min-width: 280px; /* mobile & PC e minimum size fix */
   text-align: center;
 }
+
 .founder-image {
-  width: 280px;
-  height: 350px;
+  width: 100%;
+  max-width: 280px;  /* PC & Mobile same max size */
+  height: auto;      /* aspect ratio maintain */
   border-radius: 15px;
   object-fit: cover;
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
+
 .founder-text {
   flex: 2;
+  min-width: 280px;
   text-align: left;
 }
+
 .founder-heading {
   font-size: 30px;
   margin-bottom: 15px;
   font-weight: 700;
   color: #222;
 }
+
 .founder-text h3 {
   font-size: 22px;
   margin-bottom: 5px;
 }
+
 .designation {
   font-style: italic;
   color: #777;
   margin-bottom: 15px;
 }
+
+.founder-text p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 12px;
+}
+
 .signature {
   margin-top: 20px;
   font-weight: 600;
   color: #444;
 }
 
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .founder-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .founder-text {
+    text-align: center;
+  }
+
+  .founder-text p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .founder-image {
+    max-width: 280px; /* mobile e PC moto size maintain */
+    height: auto;
+  }
+
+  .founder-heading {
+    font-size: 26px;
+  }
+
+  .founder-text h3 {
+    font-size: 20px;
+  }
+}
 </style>
+
 
   </div>
 </section>
