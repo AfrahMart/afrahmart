@@ -109,7 +109,7 @@
   <a href="#household">Household</a>
   <a href="#events">Event Service</a>
   <a href="#about">About</a>
-  <a href="#founders-section-wrapper">Founder</a> <!-- ekhane update -->
+  <a href="#founder-message">Founder</a>
   <a href="#contact">Contact</a>
 </nav>
 
@@ -636,6 +636,24 @@
   font-weight: 600;
   color: #444;
 }
+@media (max-width: 768px) {
+  .founder-container {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  .founder-text {
+    text-align: center;
+  }
+  .founder-image {
+    width: 200px;
+    height: 200px;
+  }
+  .products-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
 </style>
 
   </div>
@@ -694,6 +712,17 @@
 
 </section>
 
+<script>
+const sections = document.querySelectorAll('.section');
+window.addEventListener('scroll', () => {
+  sections.forEach(section => {
+    const rect = section.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 100) {
+      section.classList.add('visible');
+    }
+  });
+});
+</script>
 
 
 </body>
