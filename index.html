@@ -1,365 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AFRAH Mart</title>
-  <style>
-    body { font-family: 'DM Sans', sans-serif; margin:0; background:#f9f9f9; color:#333; scroll-behavior: smooth; }
-  header { background:#331756; padding:12px 20px; display:flex; align-items:center; justify-content:center; color:#fff; }
-  header img { height:100px; margin-right:12px; }
-  header h1 { font-size:28px; margin:0; }
-/* Logo fix for mobile */
-@media (max-width: 768px) {
-  header {
-    padding: 10px; /* top-bottom padding komano */
-    justify-content: center;
-  }
-  
-  header img {
-    height: 70px; /* chhoto mobile-friendly size */
-    max-width: 100%; /* jeno overflow na hoy */
-    object-fit: contain; /* aspect ratio maintain kore */
-  }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AFRAH Mart</title>
+<style>
+body { font-family: 'DM Sans', sans-serif; margin:0; background:#f9f9f9; color:#333; scroll-behavior: smooth; }
+header { background:#331756; padding:12px 20px; display:flex; align-items:center; justify-content:center; color:#fff; }
+header img { height:100px; margin-right:12px; }
+nav { background:#750851; display:flex; justify-content:center; flex-wrap:wrap; position: sticky; top:0; z-index:1000; }
+nav a { color:#fff; padding:14px 20px; text-decoration:none; font-weight:600; }
+nav a:hover { background:#331756; }
+@media (max-width: 768px) { nav a { padding: 10px 12px; font-size: 14px; } section { scroll-margin-top: 80px; } }
 
-  header h1 {
-    font-size: 20px; /* header text chhoto koro */
-  }
-}
+.hero { display:flex; flex-wrap:wrap; }
+.hero-half { flex:1; min-height:400px; color:#fff; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:40px; transition: transform .3s; }
+.hero-left { background:url('gift-banner.jpeg') center/cover no-repeat; background-color:rgba(0,0,0,0.4); background-blend-mode:darken; }
+.hero-right { background:url('corporate-banner.jpeg') center/cover no-repeat; background-color:rgba(0,0,0,0.2); background-blend-mode:darken; }
+.hero-half h2 { font-size:32px; margin-bottom:10px; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
+.hero-half p { font-size:16px; margin-bottom:15px; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
+.hero-half a { background:#fff; color:#750851; padding:10px 18px; border-radius:6px; text-decoration:none; font-weight:600; transition: .3s; }
+.hero-half a:hover { background:#f4f4f4; transform: scale(1.05); }
+.hero-half:hover { transform: scale(1.02); }
+@media (max-width: 768px) { .hero { flex-direction: column; } .hero-half { min-height: 250px; padding: 20px; } .hero-half h2 { font-size: 24px; } .hero-half p { font-size: 14px; } }
 
-  nav { background:#750851; display:flex; justify-content:center; flex-wrap:wrap; position: sticky; top:0; z-index:1000; }
-  nav a { color:#fff; padding:14px 20px; text-decoration:none; font-weight:600; }
-  nav a:hover { background:#331756; }
-  @media (max-width: 768px) {
-  nav a { padding: 10px 12px; font-size: 14px; }
-  section {
-  scroll-margin-top: 80px; /* nav height অনুযায়ী */
-}
-
-}
-
-
-    /* Split Hero Section */
-    .hero { display:flex; flex-wrap:wrap; }
-    .hero-half { flex:1; min-height:350px; color:#fff; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:40px; }
-    .hero-left { background:url('gift-banner.jpg') center/cover no-repeat; background-color:rgba(0,0,0,0.4); background-blend-mode:darken; }
-    .hero-right { background:url('household-banner.jpg') center/cover no-repeat; background-color:rgba(0,0,0,0.4); background-blend-mode:darken; }
-    .hero-half h2 { font-size:32px; margin-bottom:10px; }
-    .hero-half p { font-size:16px; margin-bottom:15px; }
-    .hero-half a { background:#fff; color:#750851; padding:10px 18px; border-radius:6px; text-decoration:none; font-weight:600; }
-    .hero-half a:hover { background:#f4f4f4; }
-	@media (max-width: 768px) {
-  .hero { flex-direction: column; }
-  .hero-half { min-height: 250px; padding: 20px; }
-  .hero-half h2 { font-size: 24px; }
-  .hero-half p { font-size: 14px; }
-}
-
-
-    .section { padding:60px 20px; max-width:1200px; margin:auto; }
-    .section h2 { text-align:center; font-size:32px; margin-bottom:30px; }
-
-    .products-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:20px; }
-    .product { background:#fff; padding:20px; border:1px solid #ddd; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1); transition:.3s; }
-    .product:hover { transform:translateY(-5px); }
-    .product img { width:100%; height:200px; object-fit:cover; border-radius:6px; }
-    .product h3 { margin-top:10px; }
-    .product p { font-size:15px; color:#555; }
-	@media (max-width: 768px) {
-  .product img { max-height: 200px; }
-}
-
-    .variants { font-size:14px; margin-top:8px; }
-    .variants span { display:inline-block; background:#eee; margin:3px; padding:4px 8px; border-radius:4px; }
-@media (max-width: 768px) {
-  .products-grid {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-  .product p { font-size: 14px; }
-  .product h3 { font-size: 18px; }
-}
-
-    /* Founder Section */
-    .founder { display:flex; align-items:center; gap:20px; flex-wrap:wrap; margin-top:40px; }
-    .founder img { width:180px; border-radius:8px; }
-    .founder-info { max-width:600px; }
-@media (max-width: 768px) {
-  .founders-section { flex-direction: column; align-items: center; gap: 20px; }
-  .founder-card { width: 90%; }
-}
-
-    footer { background:#331756; color:#fff; text-align:center; padding:20px; margin-top:50px; }
-
-    /* Floating Buttons */
-    .floating { position:fixed; bottom:20px; right:20px; display:flex; flex-direction:column; gap:10px; }
-    .floating a { width:50px; height:50px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:#25D366; color:#fff; font-size:24px; text-decoration:none; box-shadow:0 2px 6px rgba(0,0,0,0.3); }
-    .floating a.messenger { background:#0084FF; }
-  </style>
+.section { padding:60px 20px; max-width:1200px; margin:auto; }
+.section h2 { text-align:center; font-size:32px; margin-bottom:30px; }
+.products-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:20px; }
+.product, .series-card, .combo-card { background:#fff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.08); transition:.3s; }
+.product:hover, .series-card:hover, .combo-card:hover { transform:translateY(-5px); }
+.product img, .series-card img { width:100%; height:200px; object-fit:cover; border-radius:8px; }
+.series-section, .combo-offers { display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:20px; margin-bottom:40px; }
+.series-card img { height:180px; border-radius:8px; }
+table { width:100%; border-collapse: collapse; margin-bottom:40px; }
+table, th, td { border:1px solid #ddd; }
+th, td { padding:12px; text-align:center; }
+th { background:#750851; color:#fff; }
+.combo-card { padding:15px; text-align:center; border-radius:8px; background:#fdf0f5; box-shadow:0 2px 8px rgba(0,0,0,0.1); }
+.combo-card span { display:block; margin-top:5px; font-size:14px; color:#d35400; }
+.service-card img { transition:.3s; }
+.service-card img:hover { transform: scale(1.05); }
+@media (max-width: 768px) { .products-grid, .series-section, .combo-offers { grid-template-columns: 1fr; gap: 15px; } .product p, .series-card p, .combo-card p { font-size: 14px; } }
+</style>
 </head>
 <body>
 
 <header>
   <img src="afrah-logo.png" alt="Afrah Mart Logo">
- 
 </header>
 
 <nav>
-  <a href="#gifts">Gifts & Packaging</a>
-  <a href="#household">Household</a>
-  <a href="#events">Event Service</a>
+  <a href="#home">Home</a>
   <a href="#about">About</a>
-  <a href="#founder-message">Founder</a>
-  <a href="#contact">Contact</a>
+  <a href="#blossom">Gift Bags</a>
+  <a href="#gifts">Corporate Gifts</a>
+  <a href="#events">Event Solutions</a>
 </nav>
 
-
-<!-- Split Hero Section -->
-<section class="hero">
+<!-- Hero Section -->
+<section class="hero" id="home">
   <div class="hero-half hero-left">
-    <h2>Stylish & Thoughtful Gifts</h2>
-    <p>Gift Bags, Corporate Gift Box, Custom Gift Hampers & Events</p> 
-    <a href="#gifts">Explore Gifts</a>
+    <h2>Blossom Bag Collection</h2>
+    <p>Elegant gift bags crafted for every occasion</p> 
+    <a href="#blossom">Explore Gifts</a>
   </div>
   <div class="hero-half hero-right">
-    <h2>Premium Home Essentials</h2>
-    <p>Comfortable Bedsheets, Pillows, Cushions, Curtains & More</p>
-    <a href="#household">Shop Home Essentials</a>
+    <h2>Corporate & Event Solutions</h2>
+    <p>Custom corporate gifts & complete event planning</p>
+    <a href="#events">Our Services</a>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="section about" style="background:#fff; padding:60px 20px; border-radius:12px; box-shadow:0 4px 20px rgba(0,0,0,0.05); max-width:900px; margin:40px auto;">
+  <h2 style="text-align:center; font-size:36px; color:#750851; margin-bottom:30px;">💚 About Afrah Mart</h2>
+  <p style="font-size:18px; line-height:1.8; color:#444; text-align:center;">
+    At <strong style="color:#d35400;">Afrah Mart</strong>, our <strong>Gift Bags</strong> are crafted to bring elegance and joy to every occasion.  
+    Each piece is thoughtfully designed for <strong>premium quality</strong>, <strong>beautiful finishes</strong>, and <strong>lasting impression</strong>.
+  </p>
+  <p style="font-size:18px; line-height:1.8; color:#444; text-align:center; margin-top:20px;">
+    Our founder personally oversees <strong>design, printing, assembly, and delivery</strong>, ensuring every product meets the highest standards.  
+    You can find our popular gift bags, corporate gifts, and event solutions <strong style="color:#d35400;">online</strong> or at leading <strong>Super Shops</strong>.
+  </p>
+  <p style="font-size:18px; line-height:1.8; color:#444; text-align:center; margin-top:20px;">
+    Beyond Gift Bags, we offer <strong>Corporate Gifting</strong> and <strong>Complete Event Solutions</strong>, transforming moments into <strong>memorable experiences</strong> with style and sophistication.
+  </p>
+</section>
+
+
+
+<!-- Gift Bags Section -->
+<section id="blossom" class="section" style="background:#fff; padding:60px 20px;">
+  <h2 style="text-align:center; font-size:34px; color:#750851; margin-bottom:40px;">🌸 Blossom Bag Collection</h2>
+
+  <div class="series-section" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:25px;">
+
+    <div class="series-card" style="background:#EFEIEI; border-radius:12px; padding:15px; text-align:center; box-shadow:0 4px 15px rgba(0,0,0,0.08); transition:.3s;">
+      <img src="placeholder-lemon-mist.jpg" alt="Lemon Blossom Mist" style="width:100%; height:300px; object-fit:cover; border-radius:8px; margin-bottom:10px;">
+      <h3 style="font-size:20px; margin-bottom:10px;">🍋 Lemon Blossom Mist</h3>
+      <p style="font-size:14px; color:#555; line-height:1.6;">
+        📦 Soft matte lamination<br>
+        🖌 Premium paperboard<br>
+        🌸 Subtle floral print<br>
+        ✨ Elegant, lightweight, durable
+      </p>
+    </div>
+
+    <div class="series-card" style="background:#EFEIEI; border-radius:12px; padding:15px; text-align:center; box-shadow:0 4px 15px rgba(0,0,0,0.08); transition:.3s;">
+      <img src="placeholder-lemon-glow.jpg" alt="Lemon Blossom Glow" style="width:100%; height:300px; object-fit:cover; border-radius:8px; margin-bottom:10px;">
+      <h3 style="font-size:20px; margin-bottom:10px;">🍋 Lemon Blossom Glow</h3>
+      <p style="font-size:14px; color:#555; line-height:1.6;">
+        📦 Soft matte lamination<br>
+        🖌 Premium paperboard<br>
+        🌸 Subtle floral print<br>
+        🌼 Vibrant yellow floral design
+      </p>
+    </div>
+
+    <div class="series-card" style="background:#EFEIEI; border-radius:12px; padding:15px; text-align:center; box-shadow:0 4px 15px rgba(0,0,0,0.08); transition:.3s;">
+      <img src="placeholder-blue.jpg" alt="Blue Blossom Symphony" style="width:100%; height:300px; object-fit:cover; border-radius:8px; margin-bottom:10px;">
+      <h3 style="font-size:20px; margin-bottom:10px;">💙 Blue Blossom Symphony</h3>
+      <p style="font-size:14px; color:#555; line-height:1.6;">
+        📦 Matt lamination<br>
+        🖌 Premium card stock<br>
+        🌸 Artistic blue floral print<br>
+        ✨ Giftable & elegant
+      </p>
+    </div>
+
+    <div class="series-card" style="background:#EFEIEI; border-radius:12px; padding:15px; text-align:center; box-shadow:0 4px 15px rgba(0,0,0,0.08); transition:.3s;">
+      <img src="placeholder-tropical.jpg" alt="Tropical Serenity" style="width:100%; height:300px; object-fit:cover; border-radius:8px; margin-bottom:10px;">
+      <h3 style="font-size:20px; margin-bottom:10px;">🌿 Tropical Serenity</h3>
+      <p style="font-size:14px; color:#555; line-height:1.6;">
+        📦 Soft-touch lamination<br>
+        🖌 Top-quality paperboard<br>
+        🌺 Tropical vibrant print<br>
+        ✨ Perfect for gifting
+      </p>
+    </div>
+
+  </div>
+<!-- Gift Bags Sizes & Combo Premium Section -->
+<section id="sizes-combo" style="padding:40px 20px; background:#f8f8f8; font-family:'DM Sans',sans-serif;">
+  <h2 style="text-align:center; font-size:32px; color:#2c1e4a; margin-bottom:40px;">👜 Gift Bags Sizes & 🎀 Combo Offers</h2>
+
+  <div style="display:flex; justify-content:center; gap:60px; flex-wrap:wrap;">
+
+    <!-- Left Side: Sizes & Prices -->
+    <div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:25px; max-width:700px;">
+      <div class="card size-card" style="background:#fbf3ef; padding:28px; border-radius:16px; text-align:center; box-shadow:0 8px 22px rgba(0,0,0,0.08); border:1px solid #e5e5e5;">
+        <h3 style="font-size:22px; color:#2c1e4a; margin-bottom:10px;">Large</h3>
+        <p style="font-size:16px; color:#555; margin-bottom:8px;">17.3" x 12.6" x 5.1"<br>2 pcs</p>
+        <span style="font-weight:700; font-size:18px; color:#b33a00;">450 Tk</span>
+      </div>
+      <div class="card size-card" style="background:#fbf3ef; padding:28px; border-radius:16px; text-align:center; box-shadow:0 8px 22px rgba(0,0,0,0.08); border:1px solid #e5e5e5;">
+        <h3 style="font-size:22px; color:#2c1e4a; margin-bottom:10px;">Medium</h3>
+        <p style="font-size:16px; color:#555; margin-bottom:8px;">10.4" x 13.1" x 4.3"<br>3 pcs</p>
+        <span style="font-weight:700; font-size:18px; color:#b33a00;">650 Tk</span>
+      </div>
+      <div class="card size-card" style="background:#fbf3ef; padding:28px; border-radius:16px; text-align:center; box-shadow:0 8px 22px rgba(0,0,0,0.08); border:1px solid #e5e5e5;">
+        <h3 style="font-size:22px; color:#2c1e4a; margin-bottom:10px;">Small</h3>
+        <p style="font-size:16px; color:#555; margin-bottom:8px;">7" x 9" x 4"<br>3 pcs</p>
+        <span style="font-weight:700; font-size:18px; color:#bE3C1B433a00;">520 Tk</span>
+      </div>
+      <div class="card size-card" style="background:#fbf3ef; padding:28px; border-radius:16px; text-align:center; box-shadow:0 8px 22px rgba(0,0,0,0.08); border:1px solid #e5e5e5;">
+        <h3 style="font-size:22px; color:#2c1e4a; margin-bottom:10px;">Mini</h3>
+        <p style="font-size:16px; color:#555; margin-bottom:8px;">6.6" x 5.9" x 3.1"<br>3 pcs</p>
+        <span style="font-weight:700; font-size:18px; color:#b33a00;">490 Tk</span>
+      </div>
+    </div>
+
+    <!-- Right Side: Combo Offers -->
+    <div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:25px; max-width:700px;">
+      <div class="card combo-card" style="background:linear-gradient(135deg,#1e3c72,#2a5298); color:#fff; padding:28px; border-radius:16px; text-align:center; box-shadow:0 10px 26px rgba(0,0,0,0.15); position:relative; overflow:hidden;">
+        <div class="ribbon" style="position:absolute; top:10px; right:10px; background:#e67e22; color:#fff; font-size:12px; font-weight:700; padding:4px 8px; border-radius:4px;">Hot</div>
+        <h3 style="font-size:22px; margin-bottom:10px;">Elegant Mix</h3>
+        <p style="font-size:16px; margin-bottom:8px;">1 Large + 1 Medium + 1 Small</p>
+        <span style="font-weight:700; font-size:18px;">600 Tk <em style="font-weight:600; font-size:14px; color:#ffd27f;">(Save ~28%)</em></span>
+      </div>
+      <div class="card combo-card" style="background:linear-gradient(135deg,#4b134f,#2c1e4a); color:#fff; padding:28px; border-radius:16px; text-align:center; box-shadow:0 10px 26px rgba(0,0,0,0.15); position:relative; overflow:hidden;">
+        <div class="ribbon" style="position:absolute; top:10px; right:10px; background:#e67e22; color:#fff; font-size:12px; font-weight:700; padding:4px 8px; border-radius:4px;">Popular</div>
+        <h3 style="font-size:22px; margin-bottom:10px;">Family Pack</h3>
+        <p style="font-size:16px; margin-bottom:8px;">All 4 Sizes</p>
+        <span style="font-weight:700; font-size:18px;">750 Tk <em style="font-weight:600; font-size:14px; color:#ffd27f;">(Save ~25%)</em></span>
+      </div>
+      <div class="card combo-card" style="background:linear-gradient(135deg,#134e5e,#71b280); color:#fff; padding:28px; border-radius:16px; text-align:center; box-shadow:0 10px 26px rgba(0,0,0,0.15); position:relative; overflow:hidden;">
+        <div class="ribbon" style="position:absolute; top:10px; right:10px; background:#e67e22; color:#fff; font-size:12px; font-weight:700; padding:4px 8px; border-radius:4px;">Best</div>
+        <h3 style="font-size:22px; margin-bottom:10px;">Gift Lovers</h3>
+        <p style="font-size:16px; margin-bottom:8px;">Pick Any 6 Bags</p>
+        <span style="font-weight:700; font-size:18px;">1,050 Tk <em style="font-weight:600; font-size:14px; color:#ffd27f;">(Flexible Saving)</em></span>
+      </div>
+      <div class="card combo-card" style="background:linear-gradient(135deg,#42275a,#734b6d); color:#fff; padding:28px; border-radius:16px; text-align:center; box-shadow:0 10px 26px rgba(0,0,0,0.15); position:relative; overflow:hidden;">
+        <div class="ribbon" style="position:absolute; top:10px; right:10px; background:#e67e22; color:#fff; font-size:12px; font-weight:700; padding:4px 8px; border-radius:4px;">Wholesale</div>
+        <h3 style="font-size:22px; margin-bottom:10px;">Wholesale Pack</h3>
+        <p style="font-size:16px; margin-bottom:8px;">20 pcs Mixed</p>
+        <span style="font-weight:700; font-size:18px;">3,400 Tk <em style="font-weight:600; font-size:14px; color:#ffd27f;">(Save ~10%)</em></span>
+      </div>
+    </div>
+
   </div>
 </section>
 
 
 
-<!-- About Afrah Mart -->
-<section id="about" class="section" style="background:#fff; padding:60px 20px;">
-  <h2 style="text-align:center; font-size:28px; margin-bottom:25px;">About Afrah Mart</h2>
-  
-  <p style="max-width:800px; margin:auto; font-size:17px; line-height:1.7; color:#444; text-align:center;">
-    Welcome to <strong>Afrah Mart</strong> — your trusted partner for elegant fabrics, stylish household essentials, and thoughtfully curated gifts. Every product and service is carefully checked and approved by our Founder & Strategy Lead to ensure quality and excellence.
-  </p>
-  
-  <p style="max-width:800px; margin:20px auto 0; font-size:16px; line-height:1.7; color:#444; text-align:center;">
-    From gift bags, corporate boxes, and premium hampers to household products that blend comfort with design, we bring style and elegance into your everyday and special moments.
-  </p>
-  
-  <p style="max-width:800px; margin:20px auto 0; font-size:16px; line-height:1.7; color:#444; text-align:center;">
-    ✨ <strong>Event Arrangement:</strong> We proudly offer decoration and planning for birthdays, weddings, anniversaries, and corporate events. Whether a small gathering or a grand celebration, every detail is designed with care to make your moments memorable.
-  </p>
-  
-  <p style="max-width:800px; margin:20px auto 0; font-size:16px; line-height:1.7; color:#444; text-align:center;">
-    At <strong>Afrah Mart</strong>, shopping isn’t just about products — it’s about creating experiences filled with joy, comfort, and lasting memories.
-  </p>
+
+  </div>
 </section>
 
 
-<!-- Gifts Section -->
+<!-- Corporate Gifts -->
 <section id="gifts" class="section">
-  <h2>Elegant Gifts & Packaging</h2>
-  <div class="products-grid">
+<h2>🎁 Corporate Gifts</h2>
+<div class="products-grid">
+<div class="product">
+<img src="corporate-gift-box.jpg" alt="Corporate Gift Box">
+<h3>Corporate Gift Box</h3>
+<p>Premium Cardboard & Acrylic, Custom Sizes & Branding, Price: ৳1,500 – ৳10,000</p>
+</div>
+<div class="product">
+<img src="gift-hamper.jpg" alt="Gift Hamper">
+<h3>Custom Gift Hampers</h3>
+<p>Chocolates, Dry Fruits, Candles, Lifestyle Items, Price: ৳2,000 – ৳10,000</p>
+</div>
+<div class="product">
+  <img src="branding-design.jpeg" alt="Branding Design">
+  <h3>Branding Design</h3>
+  <p>Logo, Business Card, Packaging, Social Media Kit</p>
+  <p>Custom & Professional Design Solutions</p>
+  <p>Price: ৳2,000 – ৳25,000 (Based on Project)</p>
+</div>
 
-    <!-- Gift Bags -->
-    <div class="product">
-      <img src="gift-bag.jpg" alt="Gift Bag">
-      <h3>Gift Bags</h3>
-      <p style="font-size: 15px; color: #444; line-height: 1.6;">
-        🎨 Material: Paper, Fabric<br>
-        📏 Sizes: Small, Medium, Large<br>
-        🎁 Use: Birthdays, Weddings, Corporate Gifting<br>
-        💵 Price: ৳120 – ৳500 per bag
-      </p>
+<div class="product">
+<img src="gift-tshirt.jpeg" alt="Gift T-Shirt">
+<h3>Gift T-Shirt</h3>
+<p>Premium Cotton, Custom Print Available, Price: ৳500 – ৳1500</p>
+</div>
+</div>
+</section>
+
+<!-- Event Solutions (Updated - Without CTA) -->
+<section id="events" class="section" style="padding:60px 20px; background:#faf9fb; font-family:'DM Sans', sans-serif;">
+  <div style="max-width:1100px; margin:0 auto; text-align:center;">
+    <h2 style="font-size:32px; color:#2c1e4a; margin-bottom:12px;">✨ Event Solutions</h2>
+    <p style="font-size:16px; color:#555; line-height:1.8; max-width:900px; margin:0 auto 40px;">
+      Led by our founder with <strong>13+ years of hands-on event management experience</strong>, Afrah Mart delivers end-to-end event solutions — corporate conferences, brand launches, weddings and private celebrations. We combine premium décor, strategic branding, and meticulous execution so every event looks great and runs flawlessly.
+    </p>
+
+    <!-- Cards Grid -->
+    <div class="products-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:30px; align-items:start;">
+      
+      <!-- Corporate Events -->
+      <div class="product" style="background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 8px 30px rgba(30,30,30,0.06); transition:transform .28s;">
+        <div style="height:260px; width:100%; overflow:hidden;">
+          <img src="corporate-event.jpg" alt="Corporate Event" style="width:100%; height:100%; object-fit:cover; display:block;">
+        </div>
+        <div style="padding:20px; text-align:left;">
+          <h3 style="font-size:20px; color:#2c1e4a; margin-bottom:8px;">🏢 Corporate Events</h3>
+          <p style="font-size:15px; color:#666; line-height:1.6; margin-bottom:10px;">
+            Conferences, seminars, product launches & award nights — tailored branding, premium staging and on-site coordination to reflect your brand’s voice.
+          </p>
+          <p style="font-size:14px; color:#a35d00; font-weight:700; margin:0;">End-to-end planning • Onsite execution</p>
+        </div>
+      </div>
+
+      <!-- Branding & POSM -->
+      <div class="product" style="background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 8px 30px rgba(30,30,30,0.06); transition:transform .28s;">
+        <div style="height:260px; width:100%; overflow:hidden;">
+          <img src="branding-posm-kiosk.jpg" alt="Branding & POSM" style="width:100%; height:100%; object-fit:cover; display:block;">
+        </div>
+        <div style="padding:20px; text-align:left;">
+          <h3 style="font-size:20px; color:#2c1e4a; margin-bottom:8px;">🏷️ Branding & POSM</h3>
+          <p style="font-size:15px; color:#666; line-height:1.6; margin-bottom:10px;">
+            Custom stalls, kiosks, banners, signage and POSM — creative concepts plus production and flawless onsite fitting for maximum brand impact.
+          </p>
+          <p style="font-size:14px; color:#a35d00; font-weight:700; margin:0;">Concept → Design → Production → Installation</p>
+        </div>
+      </div>
+
+      <!-- Weddings & Personal Events -->
+      <div class="product" style="background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 8px 30px rgba(30,30,30,0.06); transition:transform .28s;">
+        <div style="height:260px; width:100%; overflow:hidden;">
+          <img src="wedding.jpg" alt="Weddings & Celebrations" style="width:100%; height:100%; object-fit:cover; display:block;">
+        </div>
+        <div style="padding:20px; text-align:left;">
+          <h3 style="font-size:20px; color:#2c1e4a; margin-bottom:8px;">💍 Weddings & Personal Events</h3>
+          <p style="font-size:15px; color:#666; line-height:1.6; margin-bottom:10px;">
+            Bespoke decor, lighting and stage design with attentive planning — we craft intimate and grand celebrations that guests remember.
+          </p>
+          <p style="font-size:14px; color:#a35d00; font-weight:700; margin:0;">Creative design • Flawless delivery</p>
+        </div>
+      </div>
+
     </div>
-
-    <!-- Corporate Gift Box -->
-    <div class="product">
-      <img src="corporate-gift-box.jpg" alt="Corporate Gift Box">
-      <h3>Corporate Gift Box</h3>
-      <p style="font-size: 15px; color: #444; line-height: 1.6;">
-        🎨 Material: Premium Cardboard, Wooden, Acrylic<br>
-        📏 Sizes: Customizable<br>
-        🎁 Use: Corporate Events, Client Appreciation, Premium Gifting<br>
-        💵 Price: ৳1000 – ৳10000 per box
-      </p>
-    </div>
-
-    <!-- Custom Gift Hampers -->
-    <div class="product">
-      <img src="gift-hamper.jpg" alt="Gift Hamper">
-      <h3>Custom Gift Hampers</h3>
-      <p style="font-size: 15px; color: #444; line-height: 1.6;">
-        🎁 Contents: Chocolates, Dry Fruits, Candles, Lifestyle Items<br>
-        📏 Sizes: Small, Medium, Luxury<br>
-        🎨 Customizable Branding Available<br>
-        💵 Price: ৳1500 – ৳10,000 per hamper
-      </p>
-    </div>
-
-    <!-- Gift Mugs -->
-    <div class="product">
-      <img src="gift-mug.jpg" alt="Gift Mug">
-      <h3>Gift Mugs</h3>
-      <p style="font-size: 15px; color: #444; line-height: 1.6;">
-        🎨 Material: Ceramic, Glass<br>
-        📏 Sizes: 250ml, 350ml<br>
-        🎁 Use: Personalized Gifts, Corporate Giveaways<br>
-        💵 Price: ৳350 – ৳1000 per piece
-      </p>
-    </div>
-
   </div>
 </section>
 
-  </div>
-</section>
-
-
-<!-- Household Products Section -->
-<section id="household" class="section" style="background:#f8f8f8;">
-  <h2>Household Products</h2>
-  
-  <div class="products-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px;">
-     
-    <!-- Bedsheet -->
-    <div class="product">
-      <img src="bedsheet.png" alt="Bedsheet">
-      <h3>Bedsheet</h3>
-      <p>
-        🛏️ Types: Premium, Standard <br>
-        🧵 Fabrics: Cotton, Mixed Cotton<br>
-        🛌 Size: King & Queen<br>
-        🎁 Includes: With/Without Pillow & Bolster Cover<br>
-        💵 Price: ৳1000 – ৳3000
-      </p>
-    </div>
-
-    <!-- Pillow -->
-    <div class="product">
-      <img src="pillow.png" alt="Pillow">
-      <h3>Pillow</h3>
-      <p>
-        🛏️ Ready-Made Pillows <br>
-        📦 Includes: Pillow + Cover<br>
-        🎨 Multiple designs available<br>
-        💵 Price: ৳400 – ৳1500 per piece
-      </p>
-    </div>
-
-    <!-- Kushon -->
-    <div class="product">
-      <img src="kushan.png" alt="Kushon">
-      <h3>Kushon</h3>
-      <p>
-        🪑 Use: Sofa, Chair, Bedroom<br>
-        🎨 Colors: Red, Gray, Navy, Maroon<br>
-        🧵 Material: Soft Velvet / Jute Mixed<br>
-        💵 Price: ৳300 – ৳1000 per piece
-      </p>
-    </div>
-
-    <!-- Curtains -->
-    <div class="product">
-      <img src="curtains.png" alt="Curtains">
-      <h3>Curtains</h3>
-      <p>
-        🪟 Types: Blackout, Sheer, Eyelet, Rod-Pocket<br>
-        🧵 Material: Cotton, Polyester, Linen Blend<br>
-        📏 Sizes: 4ft, 5ft, 7ft, 9ft (custom available)<br>
-        🎨 Colors/Patterns: Solid, Minimal, Printed<br>
-        💵 Price: ৳700 – ৳3500 per panel
-      </p>
-    </div>
-	
-  </div>
-</section>
-
-
+<!-- Optional hover effect -->
 <style>
-  /* Household Products Images & Cards like Gifts Section */
-  #household .product {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    text-align: center;
-    transition: transform 0.3s ease;
-  }
-
-  #household .product:hover {
-    transform: translateY(-5px);
-  }
-
-  #household .product img {
-    width: 100%;
-    height: 250px; /* uniform height like Gifts */
-    object-fit: cover;
-    border-radius: 6px;
-    margin-bottom: 12px;
-    background: #fff;
-    padding: 5px;
-  }
-
-  #household .product h3 {
-    margin-top: 10px;
-    font-size: 20px;
-  }
-
-  #household .product p {
-    font-size: 15px;
-    color: #555;
-    line-height: 1.6;
-    margin-top: 8px;
-  }
-
-  @media (max-width: 768px) {
-    #household .products-grid {
-      grid-template-columns: 1fr;
-      gap: 15px;
-    }
+  #events .product:hover { transform:translateY(-6px); box-shadow:0 18px 40px rgba(30,30,30,0.12); }
+  @media (max-width:900px){
+    #events .products-grid { grid-template-columns:1fr; }
   }
 </style>
-
-	
-  </div>
-</section>
-
-<!-- Event Branding, POSM & Kiosk Solutions Section -->
-<section id="events" class="section" style="background:#f9f9f9; padding:60px 20px;">
-  <h2 style="text-align:center; font-size:32px; margin-bottom:30px;">✨ Event Services</h2>
-  <p style="text-align:center; max-width:850px; margin:auto; font-size:18px; line-height:1.8; color:#444;">
-    Afrah Mart brings your events to life with complete solutions—from elegant décor to professional event branding, POSM, and kiosk setups.  
-    We handle every detail for corporate events, cultural programs, weddings, and personal celebrations.
-  </p>
-
-  <div class="services-grid" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:25px; margin-top:40px;">
-
-    <!-- Corporate Events -->
-    <div class="service-card" style="background:#fff; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.08); text-align:center;">
-      <img src="corporate-event.jpg" alt="Corporate Event" style="width:100%; border-radius:10px; margin-bottom:15px;">
-      <h3>🏢 Corporate Events</h3>
-      <p style="font-size:15px; color:#555; line-height:1.6;">
-        Elegant arrangements for conferences, seminars, and brand launches with premium décor, seating, and setup.
-      </p>
-    </div>
-
-    <!-- Event Branding, POSM & Kiosk -->
-    <div class="service-card" style="background:#fff; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.08); text-align:center;">
-      <img src="branding-posm-kiosk.jpg" alt="Event Branding & POSM" style="width:100%; border-radius:10px; margin-bottom:15px;">
-      <h3>🏷️ Branding, POSM & Kiosk</h3>
-      <p style="font-size:15px; color:#555; line-height:1.6;">
-        Create impactful brand experiences with custom event branding, POSM, stall & kiosk setups, banners, signage, and product displays for corporate and cultural events.
-      </p>
-    </div>
-
-    <!-- Weddings & Personal Celebrations -->
-    <div class="service-card" style="background:#fff; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.08); text-align:center;">
-      <img src="wedding.jpg" alt="Wedding & Personal Celebration" style="width:100%; border-radius:10px; margin-bottom:15px;">
-      <h3>💍 Weddings & Personal Celebrations</h3>
-      <p style="font-size:15px; color:#555; line-height:1.6;">
-        From birthdays and anniversaries to grand weddings, we deliver creative décor, stage design, lighting, and personalized arrangements for memorable moments.
-      </p>
-    </div>
-
-  </div>
-</section>
 
 
 
@@ -441,306 +383,5 @@
 </div>
 
 <style>
-  .product {
-    background: white;
-    padding: 20px;
-    text-align: left;
-    border: 1px solid #ddd;
-    border-radius: 1px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    transition: transform 0.2s;
-  }
-
-  .product:hover {
-    transform: translateY(-5px);
-  }
-
-  .product img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 4px;
-  }
-
-  .product h3 {
-    margin-top: 12px;
-    font-size: 20px;
-  }
-
-  .product p {
-    margin-top: 8px;
-    margin-bottom: 15px;
-  }
-
-  .btn {
-    display: inline-block;
-    padding: 10px 15px;
-    background-color: #2d8f64;
-    color: #fff;
-    border-radius: 6px;
-    text-decoration: none;
-    transition: background-color 0.2s;
-  }
-
-  .btn:hover {
-    background-color: #256b4f;
-  }
-  
-  
-.founders-section-wrapper {
-  padding: 60px 20px;
-  background-image: url('founders-bg.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: white;
-}
-
-	
-   .founders-section-wrapper {
-  padding: 40px 20px;
-  background-image: url('founders-bg.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: white;
-}
-
-.founders-heading {
-  text-align: center;
-  font-size: 32px;
-  margin-bottom: 30px;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
-}
-
-.founders-section {
-  display: flex;
-  justify-content: center;
-  gap: 50px;
-  flex-wrap: wrap;
-}
-
-.founder-card {
-  width: 280px;
-  background: rgba(0,0,0,0.5); /* semi-transparent dark background */
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
-  text-align: center;
-  transition: transform 0.3s ease;
-}
-
-.founder-card:hover {
-  transform: translateY(-5px);
-}
-
-.founder-card img {
-  width: 150px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 5%;
-  margin-bottom: 5px;
-  border: 3px solid white;
-}
-
-.founder-card h3 {
-  margin: 10px 0 5px;
-}
-
-.designation {
-  font-weight: bold;
-  color: #ddd;
-}
-
-.description {
-  font-size: 14px;
-  color: #eee;
-  margin-top: 10px;
-}
-
-</style>
-
-<!-- Founder Section -->
-<section id="founder-message" class="founder-message">
-  <div class="founder-container">
-    <div class="founder-image-wrapper">
-      <img src="founder.png" alt="Founder Image" class="founder-image">
-    </div>
-    <div class="founder-text">
-      <h2 class="founder-heading">From the Founder</h2>
-      <h3>Mohammad Nirob Hossain</h3>
-      <p class="designation">Founder & Strategy Lead</p>
-      <p>
-        With over <strong>13 years of corporate experience</strong> across multiple industries 
-        and proven expertise in <strong>event management leadership</strong>, 
-        I have always believed in creating businesses that blend 
-        <em>quality, creativity, and trust</em>.
-      </p>
-      <p>
-        Afrah Mart is built on this very vision — offering 
-        <strong>elegant gifts, premium household essentials, and complete event solutions</strong> 
-        under one trusted brand.
-      </p>
-      <p class="signature">— Mohammad Nirob Hossain</p>
-    </div>
-  </div>
-</section>
-
-<style>
-.founder-message {
-  padding: 60px 20px;
-  background: #f9f9f9;
-}
-
-.founder-container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  max-width: 1100px;
-  margin: auto;
-  gap: 40px;
-}
-
-.founder-image-wrapper {
-  flex: 1;
-  min-width: 280px; /* mobile & PC e minimum size fix */
-  text-align: center;
-}
-
-.founder-image {
-  width: 100%;
-  max-width: 280px;  /* PC & Mobile same max size */
-  height: auto;      /* aspect ratio maintain */
-  border-radius: 15px;
-  object-fit: cover;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-.founder-text {
-  flex: 2;
-  min-width: 280px;
-  text-align: left;
-}
-
-.founder-heading {
-  font-size: 30px;
-  margin-bottom: 15px;
-  font-weight: 700;
-  color: #222;
-}
-
-.founder-text h3 {
-  font-size: 22px;
-  margin-bottom: 5px;
-}
-
-.designation {
-  font-style: italic;
-  color: #777;
-  margin-bottom: 15px;
-}
-
-.founder-text p {
-  font-size: 16px;
-  line-height: 1.7;
-  color: #444;
-  margin-bottom: 12px;
-}
-
-.signature {
-  margin-top: 20px;
-  font-weight: 600;
-  color: #444;
-}
-
-/* Mobile Responsive */
-@media (max-width: 768px) {
-  .founder-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .founder-text {
-    text-align: center;
-  }
-
-  .founder-text p {
-    font-size: 15px;
-    line-height: 1.6;
-  }
-
-  .founder-image {
-    max-width: 280px; /* mobile e PC moto size maintain */
-    height: auto;
-  }
-
-  .founder-heading {
-    font-size: 26px;
-  }
-
-  .founder-text h3 {
-    font-size: 20px;
-  }
-}
-</style>
-
-
-  </div>
-</section>
-
-
-<!-- Contact Section with Icons -->
-<section id="contact" style="padding: 1px; background: url('contact-bg.jpg') no-repeat center center / cover; border-radius: 10px; color: #fff; font-family: sans-serif;">
-  <div style="background-color: rgba(0, 0, 0, 0.6); padding: 30px; border-radius: 10px;">
-    <h2 style="font-size: 26px; margin-bottom: 30px;">📞 Contact Us</h2>
-
-    <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: space-between;">
-
-      <!-- Outlet Info -->
-      <div style="flex: 1; min-width: 250px;">
-        <h4 style="margin-bottom: 10px;">🏪 Visit Our Outlet</h4>
-        <p style="margin: 0;">📍 Town Hall Market, Mohammadpur,<br>Dhaka-1207, Bangladesh</p>
-        <p style="margin-top: 10px;">⏰ Open: 10:00 AM – 11:30 PM</p>
-      </div>
-
-      
-     <!-- Social Media with Icons -->
-<div style="flex: 1; min-width: 250px;">
-  <h4 style="margin-bottom: 15px;">🔗 Social & Support</h4>
-  <div style="display: flex; flex-wrap: wrap; gap: 15px; align-items: center;">
-    <a href="https://www.facebook.com/AfrahMartOfficial" target="_blank" style="color: #fff; text-decoration: none; display: flex; align-items: center; gap:5px;">
-      <img src="facebook-icon.png" alt="Facebook" style="width:20px; height:20px;"> Facebook
-    </a>
-    <a href="https://www.instagram.com/afrahmart/" target="_blank" style="color: #fff; text-decoration: none; display: flex; align-items: center; gap:5px;">
-      <img src="instagram-icon.png" alt="Instagram" style="width:20px; height:20px;"> Instagram
-    </a>
-    <a href="https://wa.me/8801716619413" target="_blank" style="color: #fff; text-decoration: none; display: flex; align-items: center; gap:5px;">
-      <img src="whatsapp-icon.png" alt="WhatsApp" style="width:20px; height:20px;"> WhatsApp
-    </a>
-    <a href="https://m.me/AfrahMartOfficial" target="_blank" style="color: #fff; text-decoration: none; display: flex; align-items: center; gap:5px;">
-      <img src="messenger-icon.png" alt="Messenger" style="width:20px; height:20px;"> Messenger
-    </a>
-    <a href="mailto:afrahmartbd@gmail.com" target="_blank" style="color: #fff; text-decoration: none; display: flex; align-items: center; gap:5px;">
-      <img src="gmail-icon.png" alt="Email" style="width:20px; height:20px;"> Email
-    </a>
-  </div>
-</div>
-
-<!-- Corporate Contact -->
-      <div style="flex: 1; min-width: 250px;">
-        <h4 style="margin-bottom: 10px;">🤝 Corporate Deal <span style="font-weight: normal;">(Founder Direct Line)</span></h4>
-        <p style="margin: 0;">
-          📞 <strong>+880 1716 619413</strong><br>
-          ✉️ <strong>afrahmartbd@gmail.com</strong><br>
-          <span style="font-size: 90%; color: #ccc;">(For Business Inquiries)</span>
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-</section>
-
 </body>
 </html>
