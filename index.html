@@ -257,10 +257,10 @@ th { background:#750851; color:#fff; }
 <section id="sizes-combo" style="padding:40px 20px; background:#f8f8f8; font-family:'DM Sans',sans-serif;">
   <h2 style="text-align:center; font-size:32px; color:#2c1e4a; margin-bottom:40px;">👜 Gift Bags Sizes & 🎀 Combo Offers</h2>
 
-  <div style="display:flex; justify-content:center; gap:60px; flex-wrap:wrap;">
+  <div class="sizes-combo-wrapper" style="display:flex; justify-content:center; gap:60px; flex-wrap:wrap;">
 
     <!-- Left Side: Sizes & Prices -->
-    <div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:25px; max-width:700px;">
+    <div class="sizes-grid" style="display:grid; grid-template-columns:repeat(2, 1fr); gap:25px; max-width:700px; flex:1;">
       <div class="card size-card" style="background:#fbf3ef; padding:28px; border-radius:16px; text-align:center; box-shadow:0 8px 22px rgba(0,0,0,0.08); border:1px solid #e5e5e5;">
         <h3 style="font-size:22px; color:#2c1e4a; margin-bottom:10px;">Large</h3>
         <p style="font-size:16px; color:#555; margin-bottom:8px;">17.3" x 12.6" x 5.1"<br>2 pcs</p>
@@ -284,7 +284,7 @@ th { background:#750851; color:#fff; }
     </div>
 
     <!-- Right Side: Combo Offers -->
-    <div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:25px; max-width:700px;">
+    <div class="combo-grid" style="display:grid; grid-template-columns:repeat(2, 1fr); gap:25px; max-width:700px; flex:1;">
       <div class="card combo-card" style="background:linear-gradient(135deg,#1e3c72,#2a5298); color:#fff; padding:28px; border-radius:16px; text-align:center; box-shadow:0 10px 26px rgba(0,0,0,0.15); position:relative; overflow:hidden;">
         <div class="ribbon" style="position:absolute; top:10px; right:10px; background:#e67e22; color:#fff; font-size:12px; font-weight:700; padding:4px 8px; border-radius:4px;">Hot</div>
         <h3 style="font-size:22px; margin-bottom:10px;">Elegant Mix</h3>
@@ -314,44 +314,79 @@ th { background:#750851; color:#fff; }
   </div>
 </section>
 
+<!-- Responsive Fix -->
+<style>
+@media (max-width: 768px) {
+  .sizes-combo-wrapper { flex-direction: column; gap:30px; }
+  .sizes-grid, .combo-grid { grid-template-columns: 1fr; max-width:100%; }
+  #sizes-combo h2 { font-size:24px; margin-bottom:25px; }
+  .card h3 { font-size:18px; }
+  .card p, .card span { font-size:14px; }
+}
+</style>
+
+
 
 
 
   </div>
 </section>
 
-
 <!-- Corporate Gifts -->
-<section id="gifts" class="section">
-<h2>🎁 Corporate Gifts</h2>
-<div class="products-grid">
-<div class="product">
-<img src="corporate-gift-box.jpg" alt="Corporate Gift Box">
-<h3>Corporate Gift Box</h3>
-<p>Premium Cardboard & Acrylic, Custom Sizes & Branding, Price: ৳1,500 – ৳10,000</p>
-</div>
-<div class="product">
-<img src="gift-hamper.jpg" alt="Gift Hamper">
-<h3>Custom Gift Hampers</h3>
-<p>Chocolates, Dry Fruits, Candles, Lifestyle Items, Price: ৳2,000 – ৳10,000</p>
-</div>
-<div class="product">
-  <img src="branding-design.jpeg" alt="Branding Design">
-  <h3>Branding Design</h3>
-  <p>Logo, Business Card, Packaging, Social Media Kit</p>
-  <p>Custom & Professional Design Solutions</p>
-  <p>Price: ৳2,000 – ৳25,000 (Based on Project)</p>
-</div>
+<section id="gifts" class="section" style="padding:40px 20px; background:#fafafa; font-family:'DM Sans', sans-serif;">
+  <h2 style="text-align:center; font-size:30px; color:#2c1e4a; margin-bottom:40px;">🎁 Corporate Gifts</h2>
 
-<div class="product">
-<img src="gift-tshirt.jpeg" alt="Gift T-Shirt">
-<h3>Gift T-Shirt</h3>
-<p>Premium Cotton, Custom Print Available, Price: ৳500 – ৳1500</p>
-</div>
-</div>
+  <div class="products-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:30px;">
+
+    <!-- Corporate Gift Box -->
+    <div class="product" style="background:#fff; border-radius:16px; box-shadow:0 6px 18px rgba(0,0,0,0.08); padding:20px; text-align:center;">
+      <img src="corporate-gift-box.jpg" alt="Corporate Gift Box" style="width:100%; border-radius:12px; margin-bottom:15px;">
+      <h3 style="font-size:20px; color:#2c1e4a; margin-bottom:12px;">📦 Corporate Gift Box</h3>
+      <p style="color:#555; font-size:15px; line-height:1.6; text-align:left;">
+        ✅ Premium Cardboard & Acrylic <br>
+        📐 Custom Sizes & Branding <br>
+        💰 Price: ৳1,500 – ৳10,000
+      </p>
+    </div>
+
+    <!-- Custom Gift Hampers -->
+    <div class="product" style="background:#fff; border-radius:16px; box-shadow:0 6px 18px rgba(0,0,0,0.08); padding:20px; text-align:center;">
+      <img src="gift-hamper.jpg" alt="Gift Hamper" style="width:100%; border-radius:12px; margin-bottom:15px;">
+      <h3 style="font-size:20px; color:#2c1e4a; margin-bottom:12px;">🧺 Custom Gift Hampers</h3>
+      <p style="color:#555; font-size:15px; line-height:1.6; text-align:left;">
+        🍫 Chocolates, Dry Fruits, Candles <br>
+        🌟 Lifestyle Items Included <br>
+        💰 Price: ৳2,000 – ৳10,000
+      </p>
+    </div>
+
+    <!-- Branding Design -->
+    <div class="product" style="background:#fff; border-radius:16px; box-shadow:0 6px 18px rgba(0,0,0,0.08); padding:20px; text-align:center;">
+      <img src="branding-design.jpeg" alt="Branding Design" style="width:100%; border-radius:12px; margin-bottom:15px;">
+      <h3 style="font-size:20px; color:#2c1e4a; margin-bottom:12px;">🎨 Branding Design</h3>
+      <p style="color:#555; font-size:15px; line-height:1.6; text-align:left;">
+        🖌️ Logo, Business Card, Packaging <br>
+        📱 Social Media Kit <br>
+        🏆 Professional Custom Solutions <br>
+        💰 Price: ৳2,000 – ৳25,000
+      </p>
+    </div>
+
+    <!-- Gift T-Shirt -->
+    <div class="product" style="background:#fff; border-radius:16px; box-shadow:0 6px 18px rgba(0,0,0,0.08); padding:20px; text-align:center;">
+      <img src="gift-tshirt.jpeg" alt="Gift T-Shirt" style="width:100%; border-radius:12px; margin-bottom:15px;">
+      <h3 style="font-size:20px; color:#2c1e4a; margin-bottom:12px;">👕 Gift T-Shirt</h3>
+      <p style="color:#555; font-size:15px; line-height:1.6; text-align:left;">
+        🧵 Premium Cotton Fabric <br>
+        🖨️ Custom Print Available <br>
+        💰 Price: ৳500 – ৳1,500
+      </p>
+    </div>
+
+  </div>
 </section>
 
-<!-- Event Solutions (Updated - Without CTA) -->
+<!-- Event Solutions (Responsive + Premium Icons) -->
 <section id="events" class="section" style="padding:60px 20px; background:#faf9fb; font-family:'DM Sans', sans-serif;">
   <div style="max-width:1100px; margin:0 auto; text-align:center;">
     <h2 style="font-size:32px; color:#2c1e4a; margin-bottom:12px;">✨ Event Solutions</h2>
@@ -360,49 +395,74 @@ th { background:#750851; color:#fff; }
     </p>
 
     <!-- Cards Grid -->
-    <div class="products-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:30px; align-items:start;">
-      
+    <div class="products-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:30px; align-items:stretch;">
+
       <!-- Corporate Events -->
-      <div class="product" style="background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 8px 30px rgba(30,30,30,0.06); transition:transform .28s;">
-        <div style="height:260px; width:100%; overflow:hidden;">
+      <div class="product" style="background:#fff; border-radius:16px; overflow:hidden; box-shadow:0 8px 30px rgba(30,30,30,0.06); transition:transform .28s, box-shadow .28s;">
+        <div style="height:220px; width:100%; overflow:hidden;">
           <img src="corporate-event.jpg" alt="Corporate Event" style="width:100%; height:100%; object-fit:cover; display:block;">
         </div>
         <div style="padding:20px; text-align:left;">
           <h3 style="font-size:20px; color:#2c1e4a; margin-bottom:8px;">🏢 Corporate Events</h3>
-          <p style="font-size:15px; color:#666; line-height:1.6; margin-bottom:10px;">
-            Conferences, seminars, product launches & award nights — tailored branding, premium staging and on-site coordination to reflect your brand’s voice.
+          <p style="font-size:15px; color:#555; line-height:1.6; margin-bottom:12px;">
+            🎤 Conferences, seminars, product launches & award nights <br>
+            🎨 Tailored branding & premium staging <br>
+            🤝 On-site coordination with flawless execution
           </p>
           <p style="font-size:14px; color:#a35d00; font-weight:700; margin:0;">End-to-end planning • Onsite execution</p>
         </div>
       </div>
 
       <!-- Branding & POSM -->
-      <div class="product" style="background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 8px 30px rgba(30,30,30,0.06); transition:transform .28s;">
-        <div style="height:260px; width:100%; overflow:hidden;">
+      <div class="product" style="background:#fff; border-radius:16px; overflow:hidden; box-shadow:0 8px 30px rgba(30,30,30,0.06); transition:transform .28s, box-shadow .28s;">
+        <div style="height:220px; width:100%; overflow:hidden;">
           <img src="branding-posm-kiosk.jpg" alt="Branding & POSM" style="width:100%; height:100%; object-fit:cover; display:block;">
         </div>
         <div style="padding:20px; text-align:left;">
           <h3 style="font-size:20px; color:#2c1e4a; margin-bottom:8px;">🏷️ Branding & POSM</h3>
-          <p style="font-size:15px; color:#666; line-height:1.6; margin-bottom:10px;">
-            Custom stalls, kiosks, banners, signage and POSM — creative concepts plus production and flawless onsite fitting for maximum brand impact.
+          <p style="font-size:15px; color:#555; line-height:1.6; margin-bottom:12px;">
+            🛠️ Custom stalls, kiosks, banners & signage <br>
+            💡 Creative concepts & innovative design <br>
+            🔧 Production & flawless onsite installation
           </p>
           <p style="font-size:14px; color:#a35d00; font-weight:700; margin:0;">Concept → Design → Production → Installation</p>
         </div>
       </div>
 
       <!-- Weddings & Personal Events -->
-      <div class="product" style="background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 8px 30px rgba(30,30,30,0.06); transition:transform .28s;">
-        <div style="height:260px; width:100%; overflow:hidden;">
+      <div class="product" style="background:#fff; border-radius:16px; overflow:hidden; box-shadow:0 8px 30px rgba(30,30,30,0.06); transition:transform .28s, box-shadow .28s;">
+        <div style="height:220px; width:100%; overflow:hidden;">
           <img src="wedding.jpg" alt="Weddings & Celebrations" style="width:100%; height:100%; object-fit:cover; display:block;">
         </div>
         <div style="padding:20px; text-align:left;">
-          <h3 style="font-size:20px; color:#2c1e4a; margin-bottom:8px;">💍 Weddings & Personal Events</h3>
-          <p style="font-size:15px; color:#666; line-height:1.6; margin-bottom:10px;">
-            Bespoke decor, lighting and stage design with attentive planning — we craft intimate and grand celebrations that guests remember.
+          <h3 style="font-size:20px; color:#2c1e4a; margin-bottom:8px;">💍 Weddings & Celebrations</h3>
+          <p style="font-size:15px; color:#555; line-height:1.6; margin-bottom:12px;">
+            🌸 Bespoke décor, lighting & stage design <br>
+            🎶 Curated themes for intimate & grand events <br>
+            🏆 Attentive planning & seamless delivery
           </p>
           <p style="font-size:14px; color:#a35d00; font-weight:700; margin:0;">Creative design • Flawless delivery</p>
         </div>
       </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+/* Hover effect for premium look */
+#events .product:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 34px rgba(30,30,30,0.12);
+}
+@media (max-width:768px){
+  #events h2{font-size:26px;}
+  #events p{font-size:14px;}
+  #events .product h3{font-size:18px;}
+  #events .product p{font-size:14px;}
+}
+</style>
+
 
     </div>
   </div>
@@ -417,84 +477,82 @@ th { background:#750851; color:#fff; }
 </style>
 
 
-
 <style>
-  /* Basic Product Card Button Style (still available if needed elsewhere) */
-  .btn { 
-    display:inline-block; padding:10px 14px; color:#fff; border-radius:8px; 
-    text-decoration:none; font-weight:600; box-shadow:0 2px 6px rgba(0,0,0,.1)
-  }
-  .btn:hover { opacity:.9 }
-
   /* Floating Contact Icons */
   .floating-icons {
     position: fixed;
-    right: 20px;
-    bottom: 20px;
+    right: 15px;
+    bottom: 15px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
     z-index: 999;
   }
+
   .floating-icons a {
-    width: 50px;
-    height: 50px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #25D366;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
-  .floating-icons a.messenger {
-    background: #1877F2;
-  }
-  .floating-icons img {
-    width: 28px;
-    height: 28px;
-  }
-  
-  .product img {
-  width: 100%;
-  height: auto; /* fixed height বাদ */
-  max-height: 250px; /* optional: বেশি বড় না হয় */
-  object-fit: contain; /* ছবির কন্টেন্ট ঠিক রাখবে */
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  background: #fff;
-  padding: 5px; /* যাতে ছবির চারপাশে একটু gap থাকে */
-}
 
+  .floating-icons a:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  }
+
+  .floating-icons img {
+    width: 26px;
+    height: 26px;
+  }
+
+  /* Specific Colors */
+  .floating-icons a.whatsapp { background: #25D366; }
+  .floating-icons a.messenger { background: #1877F2; }
+  .floating-icons a.facebook { background: #1877F2; }
+  .floating-icons a.instagram { background: #E4405F; }
+  .floating-icons a.gmail { background: #fff; }
+
+  /* Responsive (smaller screen adjustments) */
+  @media (max-width: 480px) {
+    .floating-icons {
+      right: 10px;
+      bottom: 10px;
+      gap: 10px;
+    }
+    .floating-icons a {
+      width: 44px;
+      height: 44px;
+    }
+    .floating-icons img {
+      width: 22px;
+      height: 22px;
+    }
+  }
 </style>
 
 <!-- Floating Contact & Social Icons -->
 <div class="floating-icons">
-  <!-- WhatsApp -->
-  <a href="https://wa.me/8801716619413?text=I%20want%20to%20order%20from%20Afrah%20Mart" target="_blank">
+  <a href="https://wa.me/8801716619413?text=I%20want%20to%20order%20from%20Afrah%20Mart" target="_blank" class="whatsapp">
     <img src="whatsapp-icon.png" alt="WhatsApp">
   </a>
-
-  <!-- Messenger -->
   <a href="https://m.me/AfrahMartOfficial" target="_blank" class="messenger">
     <img src="messenger-icon.png" alt="Messenger">
   </a>
-
-  <!-- Facebook Page -->
-  <a href="https://www.facebook.com/AfrahMartOfficial" target="_blank" style="background:#1877F2;">
+  <a href="https://www.facebook.com/AfrahMartOfficial" target="_blank" class="facebook">
     <img src="facebook-icon.png" alt="Facebook Page">
   </a>
-
-  <!-- Instagram -->
-  <a href="https://www.instagram.com/afrahmart/" target="_blank" style="background:#E4405F;">
+  <a href="https://www.instagram.com/afrahmart/" target="_blank" class="instagram">
     <img src="instagram-icon.png" alt="Instagram">
   </a>
-
-  <!-- Gmail / Email -->
-  <a href="mailto:afrahmartbd@gmail.com" target="_blank" style="background:#FFFFFF;">
+  <a href="mailto:afrahmartbd@gmail.com" target="_blank" class="gmail">
     <img src="gmail-icon.png" alt="Email">
   </a>
 </div>
 
-<style>
 </body>
 </html>
