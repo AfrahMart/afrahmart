@@ -166,6 +166,7 @@ th { background:#750851; color:#fff; }
   <a href="#home">Home</a>
   <a href="#about">About</a>
   <a href="#blossom">Gift Bags</a>
+  <a href="#sizes-combo">Offers</a>
   <a href="#gifts">Corporate Gifts</a>
   <a href="#events">Event Solutions</a>
 </nav>
@@ -259,6 +260,52 @@ th { background:#750851; color:#fff; }
   }
 </style>
 
+<!-- Scroll behavior -->
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Lightbox overlay */
+  .lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+  }
+
+  .lightbox-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 12px;
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  @media screen and (max-width: 768px) {
+    .lightbox-content {
+      max-width: 95%;
+      max-height: 70%;
+    }
+  }
+</style>
+
 <!-- Gift Bags Section -->
 <section id="blossom" class="section" style="background:#fff; padding:60px 20px;">
   <h2 style="text-align:center; font-size:34px; color:#750851; margin-bottom:40px;">🌸 Gift Bags Collection</h2>
@@ -268,7 +315,7 @@ th { background:#750851; color:#fff; }
     <!-- Lemon Mint -->
     <div class="series-card" style="background:#f8f8f8; border-radius:12px; padding:15px; text-align:center; box-shadow:0 4px 15px rgba(0,0,0,0.08);">
       <div style="width:100%; aspect-ratio:16/10; overflow:hidden; border-radius:8px; margin-bottom:10px;">
-        <img src="placeholder-lemon-mist.jpg" alt="Lemon Mint" style="width:100%; height:100%; object-fit:cover; display:block;">
+        <img src="placeholder-lemon-mist.jpg" alt="Lemon Mint" style="width:100%; height:100%; object-fit:cover; cursor:pointer;" onclick="openLightbox(this)">
       </div>
       <h3 style="font-size:20px; margin-bottom:10px;">🍋 Lemon Mint</h3>
       <p style="font-size:14px; color:#555; line-height:1.6; text-align:left;">
@@ -276,15 +323,17 @@ th { background:#750851; color:#fff; }
         🧵 Material: Swiss Board 300 gsm Large, 250 gsm (Medium/Small) <br>
         🎨 Color: 4-Color, Matte Lamination <br>
         🎀 Handle: Synthetic Soft Ribbon <br>
-        💪 Durability: Large 8kg, Medium/Small – gifts
+        💪 Durability: Large 10kg, Medium/Small – gifts
       </p>
-      <p style="margin-top:12px; font-size:14px; font-weight:600; color:#750851;">💰 Price info below ⬇️</p>
+      <p style="margin-top:12px; font-size:14px; font-weight:600; color:#750851;">
+        <a href="#sizes-combo" style="color:#750851; text-decoration:none;">💰 Price info below ⬇️</a>
+      </p>
     </div>
 
     <!-- Lemon Glow -->
     <div class="series-card" style="background:#f8f8f8; border-radius:12px; padding:15px; text-align:center; box-shadow:0 4px 15px rgba(0,0,0,0.08);">
       <div style="width:100%; aspect-ratio:16/10; overflow:hidden; border-radius:8px; margin-bottom:10px;">
-        <img src="placeholder-lemon-glow.jpg" alt="Lemon Glow" style="width:100%; height:100%; object-fit:cover; display:block;">
+        <img src="placeholder-lemon-glow.jpg" alt="Lemon Glow" style="width:100%; height:100%; object-fit:cover; cursor:pointer;" onclick="openLightbox(this)">
       </div>
       <h3 style="font-size:20px; margin-bottom:10px;">🍋 Lemon Glow</h3>
       <p style="font-size:14px; color:#555; line-height:1.6; text-align:left;">
@@ -292,15 +341,17 @@ th { background:#750851; color:#fff; }
         🧵 Material: Swiss Board 300 gsm Large, 250 gsm (Medium/Small) <br>
         🎨 Color: 4-Color, Matte Lamination <br>
         🎀 Handle: Synthetic Soft Ribbon <br>
-        💪 Durability: Large 8kg, Medium/Small – gifts
+        💪 Durability: Large 10kg, Medium/Small – gifts
       </p>
-      <p style="margin-top:12px; font-size:14px; font-weight:600; color:#750851;">💰 Price info below ⬇️</p>
+      <p style="margin-top:12px; font-size:14px; font-weight:600; color:#750851;">
+        <a href="#sizes-combo" style="color:#750851; text-decoration:none;">💰 Price info below ⬇️</a>
+      </p>
     </div>
 
     <!-- Blue Symphony -->
     <div class="series-card" style="background:#f8f8f8; border-radius:12px; padding:15px; text-align:center; box-shadow:0 4px 15px rgba(0,0,0,0.08);">
       <div style="width:100%; aspect-ratio:16/10; overflow:hidden; border-radius:8px; margin-bottom:10px;">
-        <img src="placeholder-blue.jpg" alt="Blue Symphony" style="width:100%; height:100%; object-fit:cover; display:block;">
+        <img src="placeholder-blue.jpg" alt="Blue Symphony" style="width:100%; height:100%; object-fit:cover; cursor:pointer;" onclick="openLightbox(this)">
       </div>
       <h3 style="font-size:20px; margin-bottom:10px;">💙 Blue Symphony</h3>
       <p style="font-size:14px; color:#555; line-height:1.6; text-align:left;">
@@ -308,15 +359,17 @@ th { background:#750851; color:#fff; }
         🧵 Material: Swiss Board 300 gsm Large, 250 gsm (Medium/Small) <br>
         🎨 Color: 4-Color, Matte Lamination <br>
         🎀 Handle: Synthetic Soft Ribbon <br>
-        💪 Durability: Large 8kg, Medium/Small – gifts
+        💪 Durability: Large 10kg, Medium/Small – gifts
       </p>
-      <p style="margin-top:12px; font-size:14px; font-weight:600; color:#750851;">💰 Price info below ⬇️</p>
+      <p style="margin-top:12px; font-size:14px; font-weight:600; color:#750851;">
+        <a href="#sizes-combo" style="color:#750851; text-decoration:none;">💰 Price info below ⬇️</a>
+      </p>
     </div>
 
     <!-- Nature Bloom -->
     <div class="series-card" style="background:#f8f8f8; border-radius:12px; padding:15px; text-align:center; box-shadow:0 4px 15px rgba(0,0,0,0.08);">
       <div style="width:100%; aspect-ratio:16/10; overflow:hidden; border-radius:8px; margin-bottom:10px;">
-        <img src="placeholder-tropical.jpg" alt="Nature Bloom" style="width:100%; height:100%; object-fit:cover; display:block;">
+        <img src="placeholder-tropical.jpg" alt="Nature Bloom" style="width:100%; height:100%; object-fit:cover; cursor:pointer;" onclick="openLightbox(this)">
       </div>
       <h3 style="font-size:20px; margin-bottom:10px;">🌿 Nature Bloom</h3>
       <p style="font-size:14px; color:#555; line-height:1.6; text-align:left;">
@@ -324,15 +377,43 @@ th { background:#750851; color:#fff; }
         🧵 Material: Swiss Board 300 gsm Large, 250 gsm (Medium/Small) <br>
         🎨 Color: 4-Color, Matte Lamination <br>
         🎀 Handle: Synthetic Soft Ribbon <br>
-        💪 Durability: Large 8kg, Medium/Small – gifts
+        💪 Durability: Large 10kg, Medium/Small – gifts
       </p>
-      <p style="margin-top:12px; font-size:14px; font-weight:600; color:#750851;">💰 Price info below ⬇️</p>
+      <p style="margin-top:12px; font-size:14px; font-weight:600; color:#750851;">
+        <a href="#sizes-combo" style="color:#750851; text-decoration:none;">💰 Price info below ⬇️</a>
+      </p>
     </div>
 
   </div>
 </section>
 
-  </div>
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+  <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+  <img class="lightbox-content" id="lightbox-img">
+</div>
+
+<!-- Lightbox JS -->
+<script>
+  function openLightbox(img) {
+    document.getElementById('lightbox').style.display = 'block';
+    document.getElementById('lightbox-img').src = img.src;
+    document.getElementById('lightbox-img').alt = img.alt;
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+  }
+
+  // Close on click outside the image
+  document.getElementById('lightbox').addEventListener('click', function(e){
+    if(e.target === this) {
+      closeLightbox();
+    }
+  });
+</script>
+
+
   
 <!-- Gift Bags Sizes & Combo Premium Section -->
 <section id="sizes-combo" style="padding:40px 20px; background:#f8f8f8; font-family:'DM Sans',sans-serif;">
@@ -342,22 +423,22 @@ th { background:#750851; color:#fff; }
 
     <!-- Left Side: Sizes & Prices -->
     <div class="sizes-grid" style="display:grid; grid-template-columns:repeat(2, 1fr); gap:25px; max-width:700px; flex:1;">
-      <div class="card size-card" style="background:#fbf3ef; padding:28px; border-radius:16px; text-align:center; box-shadow:0 8px 22px rgba(0,0,0,0.08); border:1px solid #e5e5e5;">
+      <div class="card size-card" style="background:linear-gradient(135deg,#ede7f6,#fff); padding:28px; border-radius:16px; text-align:center; box-shadow:0 8px 22px rgba(0,0,0,0.08); border:1px solid #e5e5e5;">
         <h3 style="font-size:22px; color:#2c1e4a; margin-bottom:10px;">Large</h3>
         <p style="font-size:16px; color:#555; margin-bottom:8px;">10.8" x 13.1" x 4.3"<br>3 pcs</p>
         <span style="font-weight:700; font-size:18px; color:#b33a00;">777 Tk</span>
       </div>
-      <div class="card size-card" style="background:#fbf3ef; padding:28px; border-radius:16px; text-align:center; box-shadow:0 8px 22px rgba(0,0,0,0.08); border:1px solid #e5e5e5;">
+      <div class="card size-card" style="background:linear-gradient(135deg,#ede7f6,#fff); padding:28px; border-radius:16px; text-align:center; box-shadow:0 8px 22px rgba(0,0,0,0.08); border:1px solid #e5e5e5;">
         <h3 style="font-size:22px; color:#2c1e4a; margin-bottom:10px;">Medium</h3>
         <p style="font-size:16px; color:#555; margin-bottom:8px;">7" x 9" x 4"<br>3 pcs</p>
         <span style="font-weight:700; font-size:18px; color:#b33a00;">585 Tk</span>
       </div>
-      <div class="card size-card" style="background:#fbf3ef; padding:28px; border-radius:16px; text-align:center; box-shadow:0 8px 22px rgba(0,0,0,0.08); border:1px solid #e5e5e5;">
+      <div class="card size-card" style="background:linear-gradient(135deg,#ede7f6,#fff); padding:28px; border-radius:16px; text-align:center; box-shadow:0 8px 22px rgba(0,0,0,0.08); border:1px solid #e5e5e5;">
         <h3 style="font-size:22px; color:#2c1e4a; margin-bottom:10px;">Small</h3>
         <p style="font-size:16px; color:#555; margin-bottom:8px;">5.8" x 6.1" x 2.8"<br>3 pcs</p>
         <span style="font-weight:700; font-size:18px; color:#b33a00;">525 Tk</span>
       </div>
-      <div class="card size-card" style="background:#fbf3ef; padding:28px; border-radius:16px; text-align:center; box-shadow:0 8px 22px rgba(0,0,0,0.08); border:1px solid #e5e5e5;">
+      <div class="card size-card" style="background:linear-gradient(135deg,#ede7f6,#fff); padding:28px; border-radius:16px; text-align:center; box-shadow:0 8px 22px rgba(0,0,0,0.08); border:1px solid #e5e5e5;">
         <h3 style="font-size:22px; color:#2c1e4a; margin-bottom:10px;">Mixed</h3>
         <p style="font-size:16px; color:#555; margin-bottom:8px;">Large + Medium + Small<br>Each 5 pcs</p>
         <span style="font-weight:700; font-size:17px; color:#555;">Regular Price 3,145 Tk</span></p>
@@ -722,10 +803,11 @@ th { background:#750851; color:#fff; }
     padding:10px 18px;
   }
   .contact-btn i {
-    font-size:18px;
+    font-size:12px;
   }
 }
 </style>
+© 2025 Afrah Mart | All Rights Reserved | Follow us: FB | IG
 
 
 
