@@ -66,7 +66,7 @@ nav a:hover {
   transition: transform .3s; 
 }
 .hero-left { 
-  background:url('gift-banner.jpeg') center/cover no-repeat; 
+  background:url('gift-banner.png') center/cover no-repeat; 
   background-color:rgba(0,0,0,0.4); 
   background-blend-mode:darken; 
 }
@@ -258,9 +258,6 @@ th { background:#750851; color:#fff; }
       font-size: 15px;
     }
   }
-</style>
-
-<!-- Scroll behavior -->
 <style>
   html {
     scroll-behavior: smooth;
@@ -271,26 +268,43 @@ th { background:#750851; color:#fff; }
     display: none;
     position: fixed;
     z-index: 9999;
-    padding-top: 60px;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0,0,0,0.8);
+    background: rgba(0,0,0,0.9);
   }
 
   .lightbox-content {
-    margin: auto;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     max-width: 90%;
-    max-height: 80%;
-    border-radius: 12px;
+    margin: auto;
+    color: #fff;
+    text-align: center;
+  }
+
+  .lightbox-content img {
+    max-width: 100%;
+    max-height: 70vh;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+
+  .lightbox-caption {
+    font-size: 16px;
+    line-height: 1.5;
+    max-width: 90%;
+    margin: auto;
+    color: #ddd;
   }
 
   .lightbox-close {
     position: absolute;
-    top: 25px;
+    top: 15px;
     right: 35px;
     color: #fff;
     font-size: 40px;
@@ -298,11 +312,29 @@ th { background:#750851; color:#fff; }
     cursor: pointer;
   }
 
-  @media screen and (max-width: 768px) {
-    .lightbox-content {
-      max-width: 95%;
-      max-height: 70%;
-    }
+  /* Navigation arrows */
+  .lightbox-prev, .lightbox-next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    font-size: 40px;
+    font-weight: bold;
+    color: #fff;
+    padding: 16px;
+    margin-top: -50px;
+    user-select: none;
+    transition: 0.3s;
+  }
+
+  .lightbox-prev:hover, .lightbox-next:hover {
+    color: #750851;
+  }
+
+  .lightbox-prev {
+    left: 0;
+  }
+  .lightbox-next {
+    right: 0;
   }
 </style>
 
@@ -312,11 +344,107 @@ th { background:#750851; color:#fff; }
 
   <div class="series-section" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:25px;">
 
-    <!-- Lemon Mint -->
+    <!-- Petal Mist -->
     <div class="series-card" style="background:#f8f8f8; border-radius:12px; padding:15px; text-align:center; box-shadow:0 4px 15px rgba(0,0,0,0.08);">
-      <div style="width:100%; aspect-ratio:16/10; overflow:hidden; border-radius:8px; margin-bottom:10px;">
-        <img src="placeholder-lemon-mist.jpg" alt="Lemon Mint" style="width:100%; height:100%; object-fit:cover; cursor:pointer;" onclick="openLightbox(this)">
+      <div style="width:100%; overflow:hidden; border-radius:8px; margin-bottom:10px;">
+        <img src="petal-mist.jpeg" 
+             alt="Petal Mist" 
+             data-caption="📏 Sizes: Large, Medium, Small <br> 🧵 Material: Swiss Board 300 gsm Large, 250 gsm (Medium/Small) <br> 🎨 Color: 4-Color, Matte Lamination <br> 🎀 Handle: Synthetic Soft Ribbon <br> 💪 Durability: Large 8kg, Medium/Small – gifts" 
+             style="width:100%; height:100%; object-fit:cover; cursor:pointer;" 
+             onclick="openLightbox(0)">
       </div>
+      <h3 style="font-size:20px; margin-bottom:10px;"> Petal Mist</h3>
+      <p style="font-size:14px; color:#555; line-height:1.6; text-align:left;">
+        📏 Sizes: Large, Medium, Small <br>
+        🧵 Material: Swiss Board 300 gsm Large, 250 gsm (Medium/Small) <br>
+        🎨 Color: 4-Color, Matte Lamination <br>
+        🎀 Handle: Synthetic Soft Ribbon <br>
+        💪 Durability: Large 8kg, Medium/Small – gifts
+      </p>
+      <p style="margin-top:12px; font-size:14px; font-weight:600; color:#750851;">
+        <a href="#sizes-combo" style="color:#750851; text-decoration:none;">💰 Price info below ⬇️</a>
+      </p>
+    </div>
+	
+	
+    <!-- Pomegranate Pops -->
+	      <div class="series-card" style="background:#f8f8f8; border-radius:12px; padding:15px; text-align:center; box-shadow:0 4px 15px rgba(0,0,0,0.08);">
+      <div style="width:100%; overflow:hidden; border-radius:8px; margin-bottom:10px;">
+        <img src="pomegranate-pops.jpeg" 
+             alt="Pomegranate Pops" 
+             data-caption="📏 Sizes: Large, Medium, Small <br> 🧵 Material: Swiss Board 300 gsm Large, 250 gsm (Medium/Small) <br> 🎨 Color: 4-Color, Matte Lamination <br> 🎀 Handle: Synthetic Soft Ribbon <br> 💪 Durability: Large 8kg, Medium/Small – gifts" 
+             style="width:100%; height:100%; object-fit:cover; cursor:pointer;" 
+             onclick="openLightbox(0)">
+      </div>
+      <h3 style="font-size:20px; margin-bottom:10px;"> Pomegranate Pops</h3>
+      <p style="font-size:14px; color:#555; line-height:1.6; text-align:left;">
+        📏 Sizes: Large, Medium, Small <br>
+        🧵 Material: Swiss Board 300 gsm Large, 250 gsm (Medium/Small) <br>
+        🎨 Color: 4-Color, Matte Lamination <br>
+        🎀 Handle: Synthetic Soft Ribbon <br>
+        💪 Durability: Large 8kg, Medium/Small – gifts
+      </p>
+      <p style="margin-top:12px; font-size:14px; font-weight:600; color:#750851;">
+        <a href="#sizes-combo" style="color:#750851; text-decoration:none;">💰 Price info below ⬇️</a>
+      </p>
+    </div>
+	
+	    <!-- Floral Harmony -->
+	      <div class="series-card" style="background:#f8f8f8; border-radius:12px; padding:15px; text-align:center; box-shadow:0 4px 15px rgba(0,0,0,0.08);">
+      <div style="width:100%; overflow:hidden; border-radius:8px; margin-bottom:10px;">
+        <img src="floral-harmony.jpeg" 
+             alt="Floral Harmony" 
+             data-caption="📏 Sizes: Large, Medium, Small <br> 🧵 Material: Swiss Board 300 gsm Large, 250 gsm (Medium/Small) <br> 🎨 Color: 4-Color, Matte Lamination <br> 🎀 Handle: Synthetic Soft Ribbon <br> 💪 Durability: Large 8kg, Medium/Small – gifts" 
+             style="width:100%; height:100%; object-fit:cover; cursor:pointer;" 
+             onclick="openLightbox(0)">
+      </div>
+      <h3 style="font-size:20px; margin-bottom:10px;"> Floral Harmony</h3>
+      <p style="font-size:14px; color:#555; line-height:1.6; text-align:left;">
+        📏 Sizes: Large, Medium, Small <br>
+        🧵 Material: Swiss Board 300 gsm Large, 250 gsm (Medium/Small) <br>
+        🎨 Color: 4-Color, Matte Lamination <br>
+        🎀 Handle: Synthetic Soft Ribbon <br>
+        💪 Durability: Large 8kg, Medium/Small – gifts
+      </p>
+      <p style="margin-top:12px; font-size:14px; font-weight:600; color:#750851;">
+        <a href="#sizes-combo" style="color:#750851; text-decoration:none;">💰 Price info below ⬇️</a>
+      </p>
+    </div>
+
+	    <!-- Sunset Cosmos -->
+	      <div class="series-card" style="background:#f8f8f8; border-radius:12px; padding:15px; text-align:center; box-shadow:0 4px 15px rgba(0,0,0,0.08);">
+      <div style="width:100%; overflow:hidden; border-radius:8px; margin-bottom:10px;">
+        <img src="sunset-cosmos.jpg" 
+             alt="Sunset Cosmos" 
+             data-caption="📏 Sizes: Large, Medium, Small <br> 🧵 Material: Swiss Board 300 gsm Large, 250 gsm (Medium/Small) <br> 🎨 Color: 4-Color, Matte Lamination <br> 🎀 Handle: Synthetic Soft Ribbon <br> 💪 Durability: Large 8kg, Medium/Small – gifts" 
+             style="width:100%; height:100%; object-fit:cover; cursor:pointer;" 
+             onclick="openLightbox(0)">
+      </div>
+
+      <h3 style="font-size:20px; margin-bottom:10px;"> Sunset Cosmos</h3>
+      <p style="font-size:14px; color:#555; line-height:1.6; text-align:left;">
+        📏 Sizes: Large, Medium, Small <br>
+        🧵 Material: Swiss Board 300 gsm Large, 250 gsm (Medium/Small) <br>
+        🎨 Color: 4-Color, Matte Lamination <br>
+        🎀 Handle: Synthetic Soft Ribbon <br>
+        💪 Durability: Large 8kg, Medium/Small – gifts
+      </p>
+      <p style="margin-top:12px; font-size:14px; font-weight:600; color:#750851;">
+        <a href="#sizes-combo" style="color:#750851; text-decoration:none;">💰 Price info below ⬇️</a>
+      </p>
+    </div>
+
+	
+    <!-- Lemon Mint -->
+	      <div class="series-card" style="background:#f8f8f8; border-radius:12px; padding:15px; text-align:center; box-shadow:0 4px 15px rgba(0,0,0,0.08);">
+      <div style="width:100%; overflow:hidden; border-radius:8px; margin-bottom:10px;">
+        <img src="placeholder-lemon-mist.jpeg" 
+             alt="Lemon Mint" 
+             data-caption="📏 Sizes: Large, Medium, Small <br> 🧵 Material: Swiss Board 300 gsm Large, 250 gsm (Medium/Small) <br> 🎨 Color: 4-Color, Matte Lamination <br> 🎀 Handle: Synthetic Soft Ribbon <br> 💪 Durability: Large 8kg, Medium/Small – gifts" 
+             style="width:100%; height:100%; object-fit:cover; cursor:pointer;" 
+             onclick="openLightbox(0)">
+      </div>
+
       <h3 style="font-size:20px; margin-bottom:10px;">🍋 Lemon Mint</h3>
       <p style="font-size:14px; color:#555; line-height:1.6; text-align:left;">
         📏 Sizes: Large, Medium, Small <br>
@@ -330,29 +458,16 @@ th { background:#750851; color:#fff; }
       </p>
     </div>
 
-    <!-- Lemon Glow -->
-    <div class="series-card" style="background:#f8f8f8; border-radius:12px; padding:15px; text-align:center; box-shadow:0 4px 15px rgba(0,0,0,0.08);">
-      <div style="width:100%; aspect-ratio:16/10; overflow:hidden; border-radius:8px; margin-bottom:10px;">
-        <img src="placeholder-lemon-glow.jpg" alt="Lemon Glow" style="width:100%; height:100%; object-fit:cover; cursor:pointer;" onclick="openLightbox(this)">
-      </div>
-      <h3 style="font-size:20px; margin-bottom:10px;">🍋 Lemon Glow</h3>
-      <p style="font-size:14px; color:#555; line-height:1.6; text-align:left;">
-        📏 Sizes: Large, Medium, Small <br>
-        🧵 Material: Swiss Board 300 gsm Large, 250 gsm (Medium/Small) <br>
-        🎨 Color: 4-Color, Matte Lamination <br>
-        🎀 Handle: Synthetic Soft Ribbon <br>
-        💪 Durability: Large 8kg, Medium/Small – gifts
-      </p>
-      <p style="margin-top:12px; font-size:14px; font-weight:600; color:#750851;">
-        <a href="#sizes-combo" style="color:#750851; text-decoration:none;">💰 Price info below ⬇️</a>
-      </p>
-    </div>
-
     <!-- Blue Symphony -->
-    <div class="series-card" style="background:#f8f8f8; border-radius:12px; padding:15px; text-align:center; box-shadow:0 4px 15px rgba(0,0,0,0.08);">
-      <div style="width:100%; aspect-ratio:16/10; overflow:hidden; border-radius:8px; margin-bottom:10px;">
-        <img src="placeholder-blue.jpg" alt="Blue Symphony" style="width:100%; height:100%; object-fit:cover; cursor:pointer;" onclick="openLightbox(this)">
+	      <div class="series-card" style="background:#f8f8f8; border-radius:12px; padding:15px; text-align:center; box-shadow:0 4px 15px rgba(0,0,0,0.08);">
+      <div style="width:100%; overflow:hidden; border-radius:8px; margin-bottom:10px;">
+        <img src="placeholder-blue.jpeg" 
+             alt="Blue Symphony" 
+             data-caption="📏 Sizes: Large, Medium, Small <br> 🧵 Material: Swiss Board 300 gsm Large, 250 gsm (Medium/Small) <br> 🎨 Color: 4-Color, Matte Lamination <br> 🎀 Handle: Synthetic Soft Ribbon <br> 💪 Durability: Large 8kg, Medium/Small – gifts" 
+             style="width:100%; height:100%; object-fit:cover; cursor:pointer;" 
+             onclick="openLightbox(0)">
       </div>
+
       <h3 style="font-size:20px; margin-bottom:10px;">💙 Blue Symphony</h3>
       <p style="font-size:14px; color:#555; line-height:1.6; text-align:left;">
         📏 Sizes: Large, Medium, Small <br>
@@ -367,10 +482,15 @@ th { background:#750851; color:#fff; }
     </div>
 
     <!-- Nature Bloom -->
-    <div class="series-card" style="background:#f8f8f8; border-radius:12px; padding:15px; text-align:center; box-shadow:0 4px 15px rgba(0,0,0,0.08);">
-      <div style="width:100%; aspect-ratio:16/10; overflow:hidden; border-radius:8px; margin-bottom:10px;">
-        <img src="placeholder-tropical.jpg" alt="Nature Bloom" style="width:100%; height:100%; object-fit:cover; cursor:pointer;" onclick="openLightbox(this)">
+	      <div class="series-card" style="background:#f8f8f8; border-radius:12px; padding:15px; text-align:center; box-shadow:0 4px 15px rgba(0,0,0,0.08);">
+      <div style="width:100%; overflow:hidden; border-radius:8px; margin-bottom:10px;">
+        <img src="placeholder-tropical.png" 
+             alt="Nature Bloom" 
+             data-caption="📏 Sizes: Large, Medium, Small <br> 🧵 Material: Swiss Board 300 gsm Large, 250 gsm (Medium/Small) <br> 🎨 Color: 4-Color, Matte Lamination <br> 🎀 Handle: Synthetic Soft Ribbon <br> 💪 Durability: Large 8kg, Medium/Small – gifts" 
+             style="width:100%; height:100%; object-fit:cover; cursor:pointer;" 
+             onclick="openLightbox(0)">
       </div>
+
       <h3 style="font-size:20px; margin-bottom:10px;">🌿 Nature Bloom</h3>
       <p style="font-size:14px; color:#555; line-height:1.6; text-align:left;">
         📏 Sizes: Large, Medium, Small <br>
@@ -383,33 +503,73 @@ th { background:#750851; color:#fff; }
         <a href="#sizes-combo" style="color:#750851; text-decoration:none;">💰 Price info below ⬇️</a>
       </p>
     </div>
+	
+    <!-- Lemon Glow -->
+	      <div class="series-card" style="background:#f8f8f8; border-radius:12px; padding:15px; text-align:center; box-shadow:0 4px 15px rgba(0,0,0,0.08);">
+      <div style="width:100%; overflow:hidden; border-radius:8px; margin-bottom:10px;">
+        <img src="placeholder-lemon-glow.jpg" 
+             alt="Lemon Glow" 
+             data-caption="📏 Sizes: Large, Medium, Small <br> 🧵 Material: Swiss Board 300 gsm Large, 250 gsm (Medium/Small) <br> 🎨 Color: 4-Color, Matte Lamination <br> 🎀 Handle: Synthetic Soft Ribbon <br> 💪 Durability: Large 8kg, Medium/Small – gifts" 
+             style="width:100%; height:100%; object-fit:cover; cursor:pointer;" 
+             onclick="openLightbox(0)">
+      </div>
 
+      <h3 style="font-size:20px; margin-bottom:10px;">🍋 Lemon Glow</h3>
+      <p style="font-size:14px; color:#555; line-height:1.6; text-align:left;">
+        📏 Sizes: Large, Medium, Small <br>
+        🧵 Material: Swiss Board 300 gsm Large, 250 gsm (Medium/Small) <br>
+        🎨 Color: 4-Color, Matte Lamination <br>
+        🎀 Handle: Synthetic Soft Ribbon <br>
+        💪 Durability: Large 8kg, Medium/Small – gifts
+      </p>
+      <p style="margin-top:12px; font-size:14px; font-weight:600; color:#750851;">
+        <a href="#sizes-combo" style="color:#750851; text-decoration:none;">💰 Price info below ⬇️</a>
+      </p>
+    </div>
   </div>
 </section>
 
 <!-- Lightbox -->
 <div id="lightbox" class="lightbox">
   <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-  <img class="lightbox-content" id="lightbox-img">
+  <span class="lightbox-prev" onclick="changeSlide(-1)">&#10094;</span>
+  <span class="lightbox-next" onclick="changeSlide(1)">&#10095;</span>
+  <div class="lightbox-content">
+    <img id="lightbox-img" src="">
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+  </div>
 </div>
 
-<!-- Lightbox JS -->
 <script>
-  function openLightbox(img) {
+  let currentIndex = 0;
+  const images = document.querySelectorAll(".series-card img");
+
+  function openLightbox(index) {
+    currentIndex = index;
     document.getElementById('lightbox').style.display = 'block';
-    document.getElementById('lightbox-img').src = img.src;
-    document.getElementById('lightbox-img').alt = img.alt;
+    showSlide(currentIndex);
   }
 
   function closeLightbox() {
     document.getElementById('lightbox').style.display = 'none';
   }
 
-  // Close on click outside the image
+  function changeSlide(step) {
+    currentIndex += step;
+    if (currentIndex >= images.length) currentIndex = 0;
+    if (currentIndex < 0) currentIndex = images.length - 1;
+    showSlide(currentIndex);
+  }
+
+  function showSlide(index) {
+    const img = images[index];
+    document.getElementById('lightbox-img').src = img.src;
+    document.getElementById('lightbox-caption').innerHTML = `<b>${img.alt}</b><br>${img.dataset.caption}`;
+  }
+
+  // Close lightbox when clicking outside
   document.getElementById('lightbox').addEventListener('click', function(e){
-    if(e.target === this) {
-      closeLightbox();
-    }
+    if(e.target === this) closeLightbox();
   });
 </script>
 
